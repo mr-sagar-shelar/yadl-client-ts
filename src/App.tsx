@@ -25,7 +25,7 @@ function App() {
                 setCurrentEdges(code.edges as Edge[]);
               }}
               code={`
-aws-icon aWSAnalyticsAthena { position { x: 0 y: 100 } }
+aws-icon aWSAnalyticsAthena { position { x: 0 y: 100 } dimension { width: 100 height: 100 } }
 
 azure-icon azureAiMachineLearningAIStudio  { position { x: 0 y: 200 } }
 `}
@@ -40,8 +40,14 @@ azure-icon azureAiMachineLearningAIStudio  { position { x: 0 y: 200 } }
                 onEdgeConnect={(edge: any) => {
                   editorReference.current?.onEdgeConnect(edge);
                 }}
-                onNodeChange={(node: any) => {
-                  editorReference.current?.onNodeChange(node);
+                onNodePositionChanged={(node: any) => {
+                  editorReference.current?.onNodePositionChanged(node);
+                }}
+                onNodeRemoved={(node: any) => {
+                  editorReference.current?.onNodeRemoved(node);
+                }}
+                onNodeResized={(node: any) => {
+                  editorReference.current?.onNodeResized(node);
                 }}
               />
             </div>
