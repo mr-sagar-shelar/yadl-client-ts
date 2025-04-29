@@ -1,7 +1,8 @@
 import "./App.css";
 import "@xyflow/react/dist/style.css";
 import "yadl-preview/dist/yadl-preview.css";
-import { Preview } from "yadl-preview";
+import "react-fontpicker-ts/dist/index.css";
+import { Preview, SearchComponents } from "yadl-preview";
 import { YadlEditor, YadlEditorRef, YadlEditorResponse } from "yadl-editor";
 import { Allotment } from "allotment";
 import "./allotment.css";
@@ -50,6 +51,9 @@ azure-icon azureAiMachineLearningAIStudio  { position { x: 0 y: 200 } }
                   editorReference.current?.onNodeResized(node);
                 }}
               />
+            </div>
+            <div style={{ height: "100%", width: "100%" }}>
+              <SearchComponents />
             </div>
           </Allotment>
         </div>
