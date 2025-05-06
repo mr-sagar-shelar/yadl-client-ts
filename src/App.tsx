@@ -50,11 +50,14 @@ azure-icon azureAiMachineLearningAIStudio  { position { x: 0 y: 200 } }
                 onNodeResized={(node: any) => {
                   editorReference.current?.onNodeResized(node);
                 }}
+                onNodeAdded={(node: any) => {
+                  editorReference.current?.onNodeAdded(node);
+                }}
               />
             </div>
-            <div style={{ height: "100%", width: "100%" }}>
+            {/* <div style={{ height: "100%", width: "100%" }}>
               <SearchComponents />
-            </div>
+            </div> */}
           </Allotment>
         </div>
       </div>

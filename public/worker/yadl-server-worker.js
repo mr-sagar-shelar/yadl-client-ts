@@ -12584,7 +12584,7 @@ ${r}`),this.inline?`{${o}}`:o}};function $z(t,e,r){var n,o;if(t==="linkplain"||t
         "elements": [
           {
             "$type": "Keyword",
-            "value": "fontFamily"
+            "value": "fontFamily:"
           },
           {
             "$type": "Assignment",
@@ -12615,7 +12615,7 @@ ${r}`),this.inline?`{${o}}`:o}};function $z(t,e,r){var n,o;if(t==="linkplain"||t
         "elements": [
           {
             "$type": "Keyword",
-            "value": "classes"
+            "value": "classes:"
           },
           {
             "$type": "Assignment",
