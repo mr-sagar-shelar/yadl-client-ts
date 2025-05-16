@@ -1,6 +1,7 @@
 {
   "name": "yadl-client-ts",
   "private": true,
+  "homepage": "https://mr-sagar-shelar.github.io/yadl-client-ts",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
