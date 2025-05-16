@@ -10,6 +10,44 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
 import { debounce } from "lodash";
 
+const availableThemes = [
+  { value: "light", icon: "circlehollow", title: "Light" },
+  { value: "dark", icon: "circle", title: "Dark" },
+  { value: "cupcake", icon: "circle", title: "Cupcake" },
+  { value: "bumblebee", icon: "circle", title: "Bumblebee" },
+  { value: "emerald", icon: "circle", title: "Emerald" },
+  { value: "corporate", icon: "circle", title: "Corporate" },
+  { value: "synthwave", icon: "circle", title: "Synthwave" },
+  { value: "retro", icon: "circle", title: "Retro" },
+  { value: "cyberpunk", icon: "circle", title: "Cyberpunk" },
+  { value: "valentine", icon: "circle", title: "Valentine" },
+  { value: "halloween", icon: "circle", title: "Halloween" },
+  { value: "garden", icon: "circle", title: "Harden" },
+  { value: "forest", icon: "circle", title: "Forest" },
+  { value: "aqua", icon: "circle", title: "Aqua" },
+  { value: "lofi", icon: "circle", title: "Lofi" },
+  { value: "pastel", icon: "circle", title: "Pastel" },
+  { value: "fantasy", icon: "circle", title: "Fantasy" },
+  { value: "wireframe", icon: "circle", title: "Wireframe" },
+  { value: "black", icon: "circle", title: "Black" },
+  { value: "luxury", icon: "circle", title: "Luxury" },
+  { value: "dracula", icon: "circle", title: "Dracula" },
+  { value: "cmyk", icon: "circle", title: "Cmyk" },
+  { value: "autumn", icon: "circle", title: "Autumn" },
+  { value: "business", icon: "circle", title: "Ausiness" },
+  { value: "acid", icon: "circle", title: "Acid" },
+  { value: "lemonade", icon: "circle", title: "Lemonade" },
+  { value: "night", icon: "circle", title: "Night" },
+  { value: "coffee", icon: "circle", title: "Coffee" },
+  { value: "winter", icon: "circle", title: "Winter" },
+  { value: "dim", icon: "circle", title: "Dim" },
+  { value: "nord", icon: "circle", title: "Nord" },
+  { value: "sunset", icon: "circle", title: "Sunset" },
+  { value: "caramellatte", icon: "circle", title: "Caramellatte" },
+  { value: "abyss", icon: "circle", title: "Abyss" },
+  { value: "silk", icon: "circle", title: "Silk" },
+];
+
 function App() {
   const [currentNodes, setCurrentNodes] = useState<Node[]>([]);
   const [currentEdges, setCurrentEdges] = useState<Edge[]>([]);
@@ -19,7 +57,7 @@ function App() {
   const [componentsVisible, setComponentsVisible] = useState(true);
   const [hasReadFromLocalStorage, setHasReadFromLocalStorage] = useState(false);
   const [sizes, setSizes] = useState<number[]>();
-
+  const [currentTheme, setCurrentTheme] = useState<string>("light");
 
   const handleChange = useMemo(
     () =>
@@ -39,36 +77,54 @@ function App() {
     setHasReadFromLocalStorage(true);
   }, []);
 
+  const renderThemeOptions = () => {
+
+    return availableThemes.map((theme) => {
+      return <option key={theme.title}>{theme.title}</option>
+    })
+  }
 
   return (
-    <div>
+    <div data-theme={currentTheme}>
       <DnDProvider>
-        <div>
-          <button
-            className="btn btn-ghost"
-            onClick={() => {
-              setCodeVisible((codeVisible) => !codeVisible);
-            }}
-          >
-            Code
-          </button>
-          <button
-            className="btn btn-ghost"
-            onClick={() => {
-              setPreviewVisible((previewVisible) => !previewVisible);
-            }}
-          >
-            Preview
-          </button>
-          <button
-            className="btn btn-ghost"
-            onClick={() => {
-              setComponentsVisible((componentsVisible) => !componentsVisible);
-            }}
-          >Components</button>
+        <div className="flex justify-between">
+          <div>
+            <button
+              className="btn btn-ghost"
+              onClick={() => {
+                setCodeVisible((codeVisible) => !codeVisible);
+              }}
+            >
+              Code
+            </button>
+            <button
+              className="btn btn-ghost"
+              onClick={() => {
+                setPreviewVisible((previewVisible) => !previewVisible);
+              }}
+            >
+              Preview
+            </button>
+            <button
+              className="btn btn-ghost"
+              onClick={() => {
+                setComponentsVisible((componentsVisible) => !componentsVisible);
+              }}
+            >Components</button>
+          </div>
+          <fieldset className="fieldset pr-4">
+            <select defaultValue={currentTheme} className="select" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+              const foundFontSize = availableThemes.find(fontSize => fontSize.title == event.target.value);
+              if (foundFontSize) {
+                setCurrentTheme(foundFontSize.value);
+              }
+            }}>
+              {renderThemeOptions()}
+            </select>
+          </fieldset>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr" }}>
-          <div style={{ minHeight: "100vh", width: "100%" }}>
+          <div style={{ minHeight: "96vh", width: "100%" }}>
             {hasReadFromLocalStorage &&
               <Allotment
                 snap

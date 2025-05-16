@@ -1,5 +1,4 @@
 @import "tailwindcss";
-/* @source inline("text-xs text-sm text-base text-lg text-xl text-2xl text-3xl text-4xl text-5xl text-6xl text-7xl text-8xl text-9xl cursor-grab w-full overflow-auto grid flex flex-wrap p px-5 px-10  w-full h-full mx-auto break-words truncate px-10 py-5 input w-full h-[1em] opacity-50"); */
 
 @plugin "daisyui" {
     themes: all;
