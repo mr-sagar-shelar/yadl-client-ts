@@ -9,6 +9,7 @@ import "./allotment.css";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
 import { debounce } from "lodash";
+import { Examples } from "./examples";
 
 const availableThemes = [
   { value: "light", icon: "circlehollow", title: "Light" },
@@ -58,6 +59,7 @@ function App() {
   const [hasReadFromLocalStorage, setHasReadFromLocalStorage] = useState(false);
   const [sizes, setSizes] = useState<number[]>();
   const [currentTheme, setCurrentTheme] = useState<string>("light");
+  const [currentCode] = useState<string>(Examples[0].code);
 
   const handleChange = useMemo(
     () =>
@@ -78,9 +80,14 @@ function App() {
   }, []);
 
   const renderThemeOptions = () => {
-
     return availableThemes.map((theme) => {
       return <option key={theme.title}>{theme.title}</option>
+    })
+  }
+
+  const renderExampleOptions = () => {
+    return Examples.map((example) => {
+      return <option key={example.name}>{example.name}</option>
     })
   }
 
@@ -112,16 +119,28 @@ function App() {
               }}
             >Components</button>
           </div>
-          <fieldset className="fieldset pr-4">
-            <select defaultValue={currentTheme} className="select" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
-              const foundFontSize = availableThemes.find(fontSize => fontSize.title == event.target.value);
-              if (foundFontSize) {
-                setCurrentTheme(foundFontSize.value);
-              }
-            }}>
-              {renderThemeOptions()}
-            </select>
-          </fieldset>
+          <div className="flex flex-column">
+            <fieldset className="fieldset pr-4">
+              <select defaultValue={currentTheme} className="select" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                const foundFontSize = availableThemes.find(fontSize => fontSize.title == event.target.value);
+                if (foundFontSize) {
+                  setCurrentTheme(foundFontSize.value);
+                }
+              }}>
+                {renderThemeOptions()}
+              </select>
+            </fieldset>
+            <fieldset className="fieldset pr-4">
+              <select className="select" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                const foundCodeExample = Examples.find(exampleCode => exampleCode.name == event.target.value);
+                if (foundCodeExample) {
+                  editorReference.current?.setCode(foundCodeExample.code);
+                }
+              }}>
+                {renderExampleOptions()}
+              </select>
+            </fieldset>
+          </div>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr" }}>
           <div style={{ minHeight: "96vh", width: "100%" }}>
@@ -139,11 +158,7 @@ function App() {
                         setCurrentNodes(code.nodes as Node[]);
                         setCurrentEdges(code.edges as Edge[]);
                       }}
-                      code={`
-aws-icon aWSAnalyticsAthena { position { x: 0 y: 100 } dimension { width: 100 height: 100 } }
-
-azure-icon azureAiMachineLearningAIStudio  { position { x: 0 y: 200 } }
-`}
+                      code={currentCode}
                     />
                   </div>
                 </Allotment.Pane>
