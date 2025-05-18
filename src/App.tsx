@@ -201,3 +201,22 @@ function App() {
 }
 
 export default App;
+
+
+/*
+
+var totalTexts = [];
+document.getElementsByClassName("grid w-full grid-cols-[auto_auto] border-b border-gray-900/10 dark:border-white/10")[0].childNodes[1].childNodes.forEach(element => {
+    console.log(element.childNodes[0].innerText);
+    totalTexts.push(element.childNodes[0].innerText);
+})
+
+var totalTexts = [];
+document.getElementsByClassName("grid w-full grid-cols-[auto_auto] border-b border-gray-900/10 dark:border-white/10")[0].childNodes[2].childNodes.forEach(element => {
+    console.log(element.childNodes[0].innerText);
+    totalTexts.push(element.childNodes[0].innerText);
+})
+
+copy(totalTexts.join(" "))
+
+*/
