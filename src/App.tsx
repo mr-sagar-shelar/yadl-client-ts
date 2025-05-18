@@ -95,9 +95,9 @@ function App() {
     <div data-theme={currentTheme}>
       <DnDProvider>
         <div className="flex justify-between">
-          <div>
+          <div className="join p-2">
             <button
-              className="btn btn-ghost"
+              className={`btn btn-sm join-item ${codeVisible ? "btn-primary" : ""}`}
               onClick={() => {
                 setCodeVisible((codeVisible) => !codeVisible);
               }}
@@ -105,7 +105,7 @@ function App() {
               Code
             </button>
             <button
-              className="btn btn-ghost"
+              className={`btn btn-sm join-item ${previewVisible ? "btn-primary" : ""}`}
               onClick={() => {
                 setPreviewVisible((previewVisible) => !previewVisible);
               }}
@@ -113,15 +113,17 @@ function App() {
               Preview
             </button>
             <button
-              className="btn btn-ghost"
+              className={`btn btn-sm join-item ${componentsVisible ? "btn-primary" : ""}`}
               onClick={() => {
                 setComponentsVisible((componentsVisible) => !componentsVisible);
               }}
-            >Components</button>
+            >
+              Components
+            </button>
           </div>
-          <div className="flex flex-column">
-            <fieldset className="fieldset pr-4">
-              <select defaultValue={currentTheme} className="select" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+          <div className="flex flex-column p-1">
+            <fieldset className="fieldset pr-2">
+              <select defaultValue={currentTheme} className="select select-sm" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                 const foundFontSize = availableThemes.find(fontSize => fontSize.title == event.target.value);
                 if (foundFontSize) {
                   setCurrentTheme(foundFontSize.value);
@@ -131,7 +133,7 @@ function App() {
               </select>
             </fieldset>
             <fieldset className="fieldset pr-4">
-              <select className="select" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+              <select className="select select-sm" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                 const foundCodeExample = Examples.find(exampleCode => exampleCode.name == event.target.value);
                 if (foundCodeExample) {
                   editorReference.current?.setCode(foundCodeExample.code);
