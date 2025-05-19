@@ -6,7 +6,7 @@ import { Preview, SearchComponents, DnDProvider } from "yadl-preview";
 import { YadlEditor, YadlEditorRef, YadlEditorResponse } from "yadl-editor";
 import { Allotment } from "allotment";
 import "./allotment.css";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
 import { debounce } from "lodash";
 import { Examples } from "./examples";
@@ -60,6 +60,7 @@ function App() {
   const [sizes, setSizes] = useState<number[]>();
   const [currentTheme, setCurrentTheme] = useState<string>("light");
   const [currentCode] = useState<string>(Examples[0].code);
+  const [currentFonts, setCurrentFonts] = useState<string[] | undefined>([]);
 
   const handleChange = useMemo(
     () =>
@@ -69,13 +70,36 @@ function App() {
     []
   );
 
+  const loadFontFromObject = useCallback(
+    (font: string) => {
+      let cssId = 'google-font-' + font
+
+      const cssIdAll = cssId + '-all'
+      const existing = document.getElementById(cssId)
+      const existingAll = document.getElementById(cssIdAll)
+      if (!existing && !existingAll && font) {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.id = cssId
+        link.href = `https://fonts.googleapis.com/css2?family=${font}&display=swap`;
+        link.setAttribute('data-testid', cssId) // for react testing library
+        document.head.appendChild(link)
+      }
+    },
+    []
+  );
+
+  useMemo(() => {
+    currentFonts?.forEach((fontName) => {
+      loadFontFromObject(fontName)
+    });
+  }, [currentFonts?.length]);
+
   useEffect(() => {
     const value = localStorage.getItem("sizes");
-
     if (value) {
       setSizes(JSON.parse(value));
     }
-
     setHasReadFromLocalStorage(true);
   }, []);
 
@@ -159,6 +183,7 @@ function App() {
                       onChange={(code: YadlEditorResponse) => {
                         setCurrentNodes(code.nodes as Node[]);
                         setCurrentEdges(code.edges as Edge[]);
+                        setCurrentFonts(code.fontsUsed);
                       }}
                       code={currentCode}
                     />
