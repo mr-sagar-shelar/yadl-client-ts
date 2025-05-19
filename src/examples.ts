@@ -10,6 +10,8 @@ export const Examples: CodeExample[] = [
         "code":
             `
 skill-icon skillIconActivityPub { position { x: -22 y: 21 } dimension { width: 50 height: 50 } }
+skill-icon skillIconAnsible { position { x: -25 y: 109 } dimension { width: 50 height: 50 } }
+
 `
     },
     {
