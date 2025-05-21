@@ -47,6 +47,14 @@ text "Bubblegum Sans" { position { x: -141 y: 172 } dimension { width: 216 heigh
 `
     },
     {
+        "name": "Avatars Example",
+        "description": "",
+        "code":
+            `
+avatar "AVATAR" style: Circle topType: LongHairCurly accessoriesType: Sunglasses hairColor: Blonde facialHairType: BeardMedium clotheType: GraphicShirt eyeType: Hearts eyebrowType: Angry mouthType: Grimace skinColor: DarkBrown { position { x: -152 y: 211 } dimension { width: 216 height: 57 }}
+`
+    },
+    {
         "name": "Z Index Example",
         "description": "",
         "code":
