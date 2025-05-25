@@ -5,13 +5,109 @@ interface CodeExample {
 }
 export const Examples: CodeExample[] = [
     {
-        "name": "first",
+        "name": "Tags",
         "description": "",
         "code":
-            `
-skill-icon skillIconActivityPub { position { x: -22 y: 21 } dimension { width: 50 height: 50 } }
-skill-icon skillIconAnsible { position { x: -25 y: 109 } dimension { width: 50 height: 50 } }
-
+            `<Aws
+      id : "AWS1"
+      dimension: { height : 50 width : 50 }
+      position: { x : 0 y : 10 }
+      icon : aWSAnalyticsAthena
+/>
+<Azure
+      id : "Azure1"
+      dimension: { height : 50 width : 50 }
+      position: { x : 50 y : 10 }
+      icon : azureAnalyticsAnalysisServices
+/>
+<Gcp
+      id : "Gcp1"
+      dimension: { height : 50 width : 50 }
+      position: { x : 100 y : 10 }
+      icon : gCPAccessContextManager
+/>
+<Skill
+      id : "Skill1"
+      dimension: { height : 50 width : 50 }
+      position: { x : 150 y : 10 }
+      icon : skillIconBabel
+/>
+<Themeisle
+      id : "Themeisle1"
+      dimension: { height : 50 width : 50 }
+      position: { x : 200 y : 10 }
+      icon : themeisle101
+/>
+<Undraw
+      id : "Undraw1"
+      dimension: { height : 50 width : 50 }
+      position: { x : 250 y : 10 }
+      icon : undrawADayOff
+/>
+<Author
+      id : "Author1"
+      fontFamily : "Sarif"
+      profileHandle : "@Sagar"
+      profilePic : "https://www.google.com"
+      classes : ""
+      dimension: { height : 10 width : 10 }
+      position: { x : 10 y : 10 }
+/>
+<Avatar
+        id : "Avatar1"
+      accessoriesType : Blank
+      classes : ""
+      clotheType : BlazerShirt
+      eyeType : Close
+      eyebrowType : Angry
+      facialHairType : BeardLight
+      fontFamily : "sdf"
+      graphicType : Bat
+      hairColor : Auburn
+      mouthType : Concerned
+      skinColor : Black
+      style : Circle
+      topType : Hat
+      dimension: { height : 100 width : 100 }
+      position: { x : 10 y : 100 }
+/>
+<Box
+      id : "Box1"
+      classes : "from-amber-500 via-orange-500 to-red-500 opacity-100 border-1 rounded-none border-solid  bg-linear-to-t"
+      type : Box1
+      dimension: { height : 100 width : 100 }
+      position: { x : 130 y : 100 }
+/>
+<Text
+      id : "Text1"
+      classes : "mx-auto break-words truncate from-pink-500 to-yellow-500 bg-clip-text text-transparent text-3xl bg-linear-to-t "
+      fontFamily : "Black Ops One"
+      text : "Hello world"
+      dimension: { height : 30 width : 200 }
+      position: { x : 10 y : 200 }
+/>
+<Edge
+      classes : ""
+      label : "Label 1"
+      style: "{ 'stroke': 'pink' }"
+      labelStyle : "{ 'fill': 'pink', 'fontWeight': 700 }"
+      source : "Themeisle1"
+      sourceHandle : bottom
+      target : "Avatar1"
+      targetHandle : left
+      type : step
+/>
+<Edge
+      classes : ""
+      label : "Label 1"
+      style: "{ 'stroke': 'red' }"
+      labelStyle : "{ 'fill': 'red', 'fontWeight': 700 }"
+      source : "AWS1"
+      sourceHandle : bottom
+      target : "Skill1"
+      targetHandle : bottom
+      type : smoothstep
+/>
 `
     },
     {
@@ -19,18 +115,73 @@ skill-icon skillIconAnsible { position { x: -25 y: 109 } dimension { width: 50 h
         "description": "",
         "code":
             `
-skill-icon SkillActivityPub skillIconActivityPub { position { x: 15 y: 35 } dimension { width: 50 height: 50 } }
-gcp-icon GcpAnthos gCPAnthos { position { x: 193 y: 177 } dimension { width: 50 height: 50 } }
-azure-icon AzureAI azureAiMachineLearningContentSafety { position { x: -199 y: -107 } dimension { width: 50 height: 50 } }
-skill-icon SkillAngular skillIconAngular { position { x: 202 y: -101 } dimension { width: 50 height: 50 } }
-skill-icon SkillAtom skillIconAtom { position { x: -196 y: 161 } dimension { width: 50 height: 50 } }
+<Skill
+      id : "SkillActivityPub"
+      dimension: { height : 50 width : 50 }
+      position: { x : 15 y : 35 }
+      icon : skillIconDevTo
+/>
+<Gcp
+      id : "GcpAnthos"
+      dimension: { height : 50 width : 50 }
+      position: { x : 193 y : 177 }
+      icon : gCPAnthos
+/>
+<Azure
+      id : "AzureAI"
+      dimension: { height : 50 width : 50 }
+      position: { x : -199 y : -107 }
+      icon : azureAnalyticsAzureWorkbooks
+/>
+<Skill
+      id : "SkillAngular"
+      dimension: { height : 50 width : 50 }
+      position: { x : 202 y : -101 }
+      icon : skillIconDiscordJS
+/>
+<Skill
+      id : "SkillAtom"
+      dimension: { height : 50 width : 50 }
+      position: { x : -196 y : 161 }
+      icon : skillIconDebian
+/>
 
-
-edge SkillActivityPub => GcpAnthos label:"smooth edge" { type: smoothstep sourceHandle: right style:"{ 'stroke': 'pink' }" labelStyle:"{ 'fill': 'pink', 'fontWeight': 700 }" }
-edge SkillActivityPub => AzureAI label:"straight edge" { type: straight sourceHandle: left targetHandle: bottom style:"{ 'stroke': 'red' }" labelStyle:"{ 'fill': 'red', 'fontWeight': 700 }" }
-edge SkillActivityPub => SkillAngular { type: step targetHandle: left style:"{ 'stroke': 'green' }"  }
-edge SkillActivityPub => SkillAtom { type: default sourceHandle: bottom targetHandle: right style:"{ 'stroke': 'blue' }"  }
-
+<Edge
+      label : "smooth edge"
+      style: "{ 'stroke': 'pink' }"
+      labelStyle : "{ 'fill': 'pink', 'fontWeight': 700 }"
+      source : "SkillActivityPub"
+      target : "GcpAnthos"
+      sourceHandle : right
+      type : smoothstep
+/>
+<Edge
+      label : "straight edge"
+      style: "{ 'stroke': 'red' }"
+      labelStyle : "{ 'fill': 'red', 'fontWeight': 700 }"
+      source : "SkillActivityPub"
+      target : "AzureAI"
+      sourceHandle : left
+      targetHandle : bottom
+      type : straight
+/>
+<Edge
+      label : "straight edge"
+      style: "{ 'stroke': 'green' }"
+      source : "SkillActivityPub"
+      target : "SkillAngular"
+      targetHandle : left
+      type : step
+/>
+<Edge
+      label : "straight edge"
+      style: "{ 'stroke': 'blue' }"
+      source : "SkillActivityPub"
+      target : "SkillAtom"
+      sourceHandle : bottom
+      targetHandle : right
+      type : default
+/>
 `
     },
     {
@@ -51,7 +202,24 @@ text "Bubblegum Sans" { position { x: -141 y: 172 } dimension { width: 216 heigh
         "description": "",
         "code":
             `
-avatar "AVATAR" style: Circle topType: LongHairCurly accessoriesType: Sunglasses hairColor: Blonde facialHairType: BeardMedium clotheType: GraphicShirt eyeType: Hearts eyebrowType: Angry mouthType: Grimace skinColor: DarkBrown { position { x: -152 y: 211 } dimension { width: 216 height: 57 }}
+<Avatar
+      id : "AVATAR"
+      accessoriesType : Sunglasses
+      clotheType : GraphicShirt
+      eyeType : Close
+      eyebrowType : Angry
+      facialHairType : BeardLight
+      fontFamily : "sdf"
+      graphicType : Bat
+      hairColor : Blonde
+      mouthType : Grimace
+      skinColor : DarkBrown
+      style : Circle
+      topType : LongHairCurly
+      dimension: { height : 100 width : 100 }
+      position: { x : 10 y : 0 }
+/>
+// avatar "AVATAR" style: Circle topType: LongHairCurly accessoriesType: Sunglasses hairColor: Blonde facialHairType: BeardMedium clotheType: GraphicShirt eyeType: Hearts eyebrowType: Angry mouthType: Grimace skinColor: DarkBrown { position { x: -152 y: 211 } dimension { width: 216 height: 57 }}
 `
     },
     {
