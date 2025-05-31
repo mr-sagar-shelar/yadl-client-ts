@@ -10,6 +10,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
 import { debounce } from "lodash";
 import { Examples } from "./examples";
+import { Button } from "@/components/ui/button"
 
 const availableThemes = [
   { value: "light", icon: "circlehollow", title: "Light" },
@@ -120,6 +121,7 @@ function App() {
       <DnDProvider>
         <div className="flex justify-between">
           <div className="join p-2">
+            <Button>Click me</Button>
             <button
               className={`btn btn-sm join-item ${codeVisible ? "btn-primary" : ""}`}
               onClick={() => {
