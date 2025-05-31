@@ -186,6 +186,7 @@ function App() {
                         setCurrentFonts(code.fontsUsed);
                       }}
                       code={currentCode}
+                      onLoad={() => { }}
                     />
                   </div>
                 </Allotment.Pane>
