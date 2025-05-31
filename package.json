@@ -29,6 +29,7 @@
     "allotment": "^1.20.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "jotai": "^2.12.5",
     "lodash": "^4.17.21",
     "lucide-react": "^0.511.0",
     "react": "^19.0.0",
@@ -38,8 +39,14 @@
     "react-resizable-panels": "^3.0.2",
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.4",
+    "yadl-avatar": "file:../yadl-ui/packages/yadl-avatar",
+    "yadl-aws-icons": "^1.0.6",
+    "yadl-azure-icons": "^1.0.6",
     "yadl-editor": "file:../yadl-ui/packages/yadl-editor-core/yadl-editor",
+    "yadl-gcp-icons": "^1.0.6",
     "yadl-preview": "file:../yadl-ui/packages/yadl-preview",
+    "yadl-skill-icons": "^1.0.6",
+    "yadl-ui-components": "^1.0.6",
     "zod": "^3.25.42"
   },
   "devDependencies": {
