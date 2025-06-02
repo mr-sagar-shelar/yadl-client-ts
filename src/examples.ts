@@ -1,14 +1,14 @@
 interface CodeExample {
-    name: string;
-    description?: string;
-    code: string;
+      name: string;
+      description?: string;
+      code: string;
 }
 export const Examples: CodeExample[] = [
-    {
-        "name": "Tags",
-        "description": "",
-        "code":
-            `<Aws
+      {
+            "name": "Tags",
+            "description": "",
+            "code":
+                  `<Aws
       id : "AWS1"
       dimension: { height : 50 width : 50 }
       position: { x : 0 y : 10 }
@@ -31,18 +31,6 @@ export const Examples: CodeExample[] = [
       dimension: { height : 50 width : 50 }
       position: { x : 150 y : 10 }
       icon : skillIconBabel
-/>
-<Themeisle
-      id : "Themeisle1"
-      dimension: { height : 50 width : 50 }
-      position: { x : 200 y : 10 }
-      icon : themeisle101
-/>
-<Undraw
-      id : "Undraw1"
-      dimension: { height : 50 width : 50 }
-      position: { x : 250 y : 10 }
-      icon : undrawADayOff
 />
 <Author
       id : "Author1"
@@ -109,12 +97,12 @@ export const Examples: CodeExample[] = [
       type : smoothstep
 />
 `
-    },
-    {
-        "name": "Edge Example",
-        "description": "",
-        "code":
-            `
+      },
+      {
+            "name": "Edge Example",
+            "description": "",
+            "code":
+                  `
 <Skill
       id : "SkillActivityPub"
       dimension: { height : 50 width : 50 }
@@ -183,12 +171,12 @@ export const Examples: CodeExample[] = [
       type : default
 />
 `
-    },
-    {
-        "name": "Fonts Example",
-        "description": "",
-        "code":
-            `
+      },
+      {
+            "name": "Fonts Example",
+            "description": "",
+            "code":
+                  `
 text "AUTOWIDWe" { position { x: -138 y: -18 } dimension { width: 205 height: 33 }  fontFamily: "Audiowide" classes: "text-wrap mx-auto break-words truncate text-primary text-2xl " }
 text "Bagel Fat One" { position { x: -134 y: 24 } dimension { width: 195 height: 41 }  fontFamily: "Bagel Fat One" classes: "text-wrap mx-auto break-words truncate text-primary text-2xl " }
 text "Beth Ellen" { position { x: -137 y: 75 } dimension { width: 191 height: 44 }  fontFamily: "Beth Ellen" classes: "text-wrap mx-auto break-words truncate text-primary text-2xl " }
@@ -196,12 +184,12 @@ text "Bruno Ace" { position { x: -144 y: 124 } dimension { width: 219 height: 35
 text "Bubblegum Sans" { position { x: -141 y: 172 } dimension { width: 216 height: 57 }  fontFamily: "Bubblegum Sans" classes: "text-wrap mx-auto break-words truncate text-primary text-2xl " }
 // text "Barriecito" { position { x: -152 y: 211 } dimension { width: 216 height: 57 }  fontFamily: "Barriecito" classes: "text-wrap mx-auto break-words truncate text-primary text-2xl " }
 `
-    },
-    {
-        "name": "Avatars Example",
-        "description": "",
-        "code":
-            `
+      },
+      {
+            "name": "Avatars Example",
+            "description": "",
+            "code":
+                  `
 <Avatar
       id : "AVATAR"
       accessoriesType : Sunglasses
@@ -221,12 +209,12 @@ text "Bubblegum Sans" { position { x: -141 y: 172 } dimension { width: 216 heigh
 />
 // avatar "AVATAR" style: Circle topType: LongHairCurly accessoriesType: Sunglasses hairColor: Blonde facialHairType: BeardMedium clotheType: GraphicShirt eyeType: Hearts eyebrowType: Angry mouthType: Grimace skinColor: DarkBrown { position { x: -152 y: 211 } dimension { width: 216 height: 57 }}
 `
-    },
-    {
-        "name": "Z Index Example",
-        "description": "",
-        "code":
-            `
+      },
+      {
+            "name": "Z Index Example",
+            "description": "",
+            "code":
+                  `
 undraw-icon undrawPhoneCall { position { x: -233 y: -264 } dimension { width: 470 height: 470 } }
 skill-icon skillIconActivityPub { position { x: -137 y: -144 } dimension { width: 136 height: 136 } }
 skill-icon skillIconC { position { x: -54 y: -93 } dimension { width: 113 height: 113 } }
@@ -235,12 +223,12 @@ skill-icon skillIconFortran { position { x: -49 y: -16 } dimension { width: 123 
 text "Z Index Example Z Index Example Z Index Example " { position { x: -362 y: -14 } fontFamily: "Audiowide" classes: "mx-auto break-words truncate bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent text-2xl" }
 
 `
-    },
-    {
-        "name": "Boxes Example",
-        "description": "",
-        "code":
-            `
+      },
+      {
+            "name": "Boxes Example",
+            "description": "",
+            "code":
+                  `
 
 skill-icon skillIconActivityPub { position { x: -22 y: 21 } dimension { width: 50 height: 50 } }
 box Box1 { position { x: -61 y: -37 } dimension { width: 81 height: 82 } classes: "bg-primary opacity-100 border-1 rounded-none border-solid " }
@@ -255,5 +243,5 @@ box Box1 { position { x: 257 y: -179 } dimension { width: 100 height: 100 } clas
 box Box1 { position { x: 222 y: 185 } dimension { width: 100 height: 100 } classes: "bg-secondary-content opacity-50 border-2 rounded-e-full border-dashed border-blue-500" }
 
 `
-    }
+      }
 ]
