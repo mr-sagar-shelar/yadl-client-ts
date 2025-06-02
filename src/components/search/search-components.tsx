@@ -12,17 +12,18 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import SearchSkillIcons from "./search-skill-icons";
-import SearchAzureIcons from "./search-azure-icons";
-import SearchGcpIcons from "./search-gcp-icons";
-import SearchTextComponents from "./search-text-components";
-import SearchBoxComponents from "./search-box-components";
-import SearchAvatars from "./search-avatars";
+import { lazy, Suspense, useState } from "react";
+const SearchAwsIconsLazy = lazy(() => import('./search-aws-icons'));
+const SearchSkillIconsLazy = lazy(() => import('./search-skill-icons'));
+const SearchAzureIconsLazy = lazy(() => import('./search-azure-icons'));
+const SearchGcpIconsLazy = lazy(() => import('./search-gcp-icons'));
+const SearchTextComponentsLazy = lazy(() => import('./search-text-components'));
+const SearchBoxComponentsLazy = lazy(() => import('./search-box-components'));
+const SearchAvatarsLazy = lazy(() => import('./search-avatars'));
+// import SearchAvatars from "./search-avatars";
 import { ConfigureTextDialog } from "./dialogs/configure-text-dialog";
 import { ConfigureBoxDialog } from "./dialogs/configure-box-dialog";
 import { ConfigureAvatarDialog } from "./dialogs/configure-avatar-dialog";
-import { lazy, Suspense, useState } from "react";
-const SearchAwsIconsLazy = lazy(() => import('./search-aws-icons'));
 
 export function SearchComponents() {
   let [configureTextDialogOpen, setConfigureTextDialogOpen] = useState<boolean>(false);
@@ -33,7 +34,6 @@ export function SearchComponents() {
     <>
       <SidebarContent className="gap-0">
         <SearchForm />
-        {/* <ScrollArea className="h-90%"> */}
         <SidebarGroup>
           <SidebarMenu>
             <Collapsible
@@ -46,7 +46,6 @@ export function SearchComponents() {
                     AWS Icons
                     <Plus className="m-1 ml-auto group-data-[state=open]/collapsible:hidden hover:bg-primary hover:text-secondary" />
                     <Minus className="m-1 ml-auto group-data-[state=closed]/collapsible:hidden hover:bg-primary hover:text-secondary" />
-                    {/* <X className="m-1 hover:bg-primary hover:text-secondary" /> */}
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
@@ -69,7 +68,9 @@ export function SearchComponents() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SearchAzureIcons />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchAzureIconsLazy />
+                  </Suspense>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
@@ -86,7 +87,9 @@ export function SearchComponents() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SearchGcpIcons />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchGcpIconsLazy />
+                  </Suspense>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
@@ -103,7 +106,9 @@ export function SearchComponents() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SearchSkillIcons />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchSkillIconsLazy />
+                  </Suspense>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
@@ -121,7 +126,9 @@ export function SearchComponents() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SearchTextComponents />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchTextComponentsLazy />
+                  </Suspense>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
@@ -139,7 +146,9 @@ export function SearchComponents() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SearchBoxComponents />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchBoxComponentsLazy />
+                  </Suspense>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
@@ -157,37 +166,14 @@ export function SearchComponents() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SearchAvatars />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchAvatarsLazy />
+                  </Suspense>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
-
-            {/* {data.navMain.map((item, index) => (
-              <Collapsible
-                key={item.title}
-                defaultOpen={index === 1}
-                className="group/collapsible"
-              >
-                <SidebarMenuItem>
-                  <CollapsibleTrigger asChild>
-                    <SidebarMenuButton>
-                      {item.title}{" "}
-                      <Plus className="ml-auto group-data-[state=open]/collapsible:hidden" />
-                      <Minus className="ml-auto group-data-[state=closed]/collapsible:hidden" />
-                      <Trash2 />
-                    </SidebarMenuButton>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <ScrollArea className="h-72 w-48 p-2">
-                      <h3> Icons Here</h3>
-                    </ScrollArea>
-                  </CollapsibleContent>
-                </SidebarMenuItem>
-              </Collapsible>
-            ))} */}
           </SidebarMenu>
         </SidebarGroup>
-        {/* </ScrollArea> */}
       </SidebarContent>
       {/* <div className="p-1 absolute bottom-0">
         <Button variant="secondary" >
