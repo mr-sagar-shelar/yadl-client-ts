@@ -1,4 +1,123 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.147 0.004 49.25);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.147 0.004 49.25);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.147 0.004 49.25);
+  --primary: oklch(0.216 0.006 56.043);
+  --primary-foreground: oklch(0.985 0.001 106.423);
+  --secondary: oklch(0.97 0.001 106.424);
+  --secondary-foreground: oklch(0.216 0.006 56.043);
+  --muted: oklch(0.97 0.001 106.424);
+  --muted-foreground: oklch(0.553 0.013 58.071);
+  --accent: oklch(0.97 0.001 106.424);
+  --accent-foreground: oklch(0.216 0.006 56.043);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.923 0.003 48.717);
+  --input: oklch(0.923 0.003 48.717);
+  --ring: oklch(0.709 0.01 56.259);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0.001 106.423);
+  --sidebar-foreground: oklch(0.147 0.004 49.25);
+  --sidebar-primary: oklch(0.216 0.006 56.043);
+  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-accent: oklch(0.97 0.001 106.424);
+  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
+  --sidebar-border: oklch(0.923 0.003 48.717);
+  --sidebar-ring: oklch(0.709 0.01 56.259);
+}
+
+.dark {
+  --background: oklch(0.147 0.004 49.25);
+  --foreground: oklch(0.985 0.001 106.423);
+  --card: oklch(0.216 0.006 56.043);
+  --card-foreground: oklch(0.985 0.001 106.423);
+  --popover: oklch(0.216 0.006 56.043);
+  --popover-foreground: oklch(0.985 0.001 106.423);
+  --primary: oklch(0.923 0.003 48.717);
+  --primary-foreground: oklch(0.216 0.006 56.043);
+  --secondary: oklch(0.268 0.007 34.298);
+  --secondary-foreground: oklch(0.985 0.001 106.423);
+  --muted: oklch(0.268 0.007 34.298);
+  --muted-foreground: oklch(0.709 0.01 56.259);
+  --accent: oklch(0.268 0.007 34.298);
+  --accent-foreground: oklch(0.985 0.001 106.423);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.553 0.013 58.071);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.216 0.006 56.043);
+  --sidebar-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-accent: oklch(0.268 0.007 34.298);
+  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.553 0.013 58.071);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
 
 @source inline("text-primary text-primary-content text-secondary text-secondary-content text-accent text-accent-content text-neutral text-neutral-content text-info text-info-content text-success text-success-content text-warning text-warning-content text-error text-error-content bg-primary to-primary via-primary from-primary text-primary ring-primary fill-primary caret-primary stroke-primary border-primary divide-primary accent-primary shadow-primary outline-primary decoration-primary placeholder-primary ring-offset-primary");
 
@@ -41,7 +160,6 @@
 /* Mask Image */
 @source inline("mask-[<value>] mask-(<custom-property>) mask-none mask-linear-<number> -mask-linear-<number> mask-linear-from-<number> mask-linear-from-<percentage> mask-linear-from-<color> mask-linear-from-(<custom-property>) mask-linear-from-[<value>] mask-linear-to-<number> mask-linear-to-<percentage> mask-linear-to-<color> mask-linear-to-(<custom-property>) mask-linear-to-[<value>] mask-t-from-<number> mask-t-from-<percentage> mask-t-from-<color> mask-t-from-(<custom-property>) mask-t-from-[<value>] mask-t-to-<number> mask-t-to-<percentage> mask-t-to-<color> mask-t-to-(<custom-property>) mask-t-to-[<value>] mask-r-from-<number> mask-r-from-<percentage> mask-r-from-<color> mask-r-from-(<custom-property>) mask-r-from-[<value>] mask-r-to-<number> mask-r-to-<percentage> mask-r-to-<color> mask-r-to-(<custom-property>) mask-r-to-[<value>] mask-b-from-<number> mask-b-from-<percentage> mask-b-from-<color> mask-b-from-(<custom-property>) mask-b-from-[<value>] mask-b-to-<number> mask-b-to-<percentage> mask-b-to-<color> mask-b-to-(<custom-property>) mask-b-to-[<value>] mask-l-from-<number> mask-l-from-<percentage> mask-l-from-<color> mask-l-from-(<custom-property>) mask-l-from-[<value>] mask-l-to-<number> mask-l-to-<percentage> mask-l-to-<color> mask-l-to-(<custom-property>) mask-l-to-[<value>] mask-y-from-<number> mask-y-from-<percentage> mask-y-from-<color> mask-y-from-(<custom-property>) mask-y-from-[<value>] mask-y-to-<number> mask-y-to-<percentage> mask-y-to-<color> mask-y-to-(<custom-property>) mask-y-to-[<value>] mask-x-from-<number> mask-x-from-<percentage> mask-x-from-<color> mask-x-from-(<custom-property>) mask-x-from-[<value>] mask-x-to-<number> mask-x-to-<percentage> mask-x-to-<color> mask-x-to-(<custom-property>) mask-x-to-[<value>] mask-radial-[<value>] mask-radial-[<size>] mask-radial-[<size>_<size>] mask-radial-from-<number> mask-radial-from-<percentage> mask-radial-from-<color> mask-radial-from-(<custom-property>) mask-radial-from-[<value>] mask-radial-to-<number> mask-radial-to-<percentage> mask-radial-to-<color> mask-radial-to-(<custom-property>) mask-radial-to-[<value>] mask-radial-circle mask-radial-ellipse mask-radial-closest-corner mask-radial-closest-side mask-radial-farthest-corner mask-radial-farthest-side mask-radial-at-top-left mask-radial-at-top mask-radial-at-top-right mask-radial-at-left mask-radial-at-center mask-radial-at-right mask-radial-at-bottom-left mask-radial-at-bottom mask-radial-at-bottom-right mask-conic-<number> -mask-conic-<number> mask-conic-from-<number> mask-conic-from-<percentage> mask-conic-from-<color> mask-conic-from-(<custom-property>) mask-conic-from-[<value>] mask-conic-to-<number> mask-conic-to-<percentage> mask-conic-to-<color> mask-conic-to-(<custom-property>) mask-conic-to-[<value>] mask-alpha mask-luminance mask-match mask-origin-border mask-origin-padding mask-origin-content mask-origin-fill mask-origin-stroke mask-origin-view mask-repeat mask-no-repeat mask-repeat-x mask-repeat-y mask-repeat-space mask-repeat-round mask-auto mask-cover mask-contain mask-type-alpha mask-type-luminance");
 
-
 /* Filter */
 @source inline("blur-xs blur-sm blur-md blur-lg blur-xl blur-2xl blur-3xl blur-none blur-(<custom-property>) blur-[<value>] brightness-<number> brightness-(<custom-property>) brightness-[<value>] contrast-<number> contrast-(<custom-property>) contrast-[<value>] drop-shadow-xs drop-shadow-sm drop-shadow-md drop-shadow-lg drop-shadow-xl drop-shadow-2xl drop-shadow-none drop-shadow-(<custom-property>) drop-shadow-(color:<custom-property>) drop-shadow-[<value>] drop-shadow-inherit drop-shadow-current drop-shadow-transparent drop-shadow-black drop-shadow-white drop-shadow-red-50 drop-shadow-red-100 drop-shadow-red-200 drop-shadow-red-300 drop-shadow-red-400 drop-shadow-red-500 drop-shadow-red-600 drop-shadow-red-700 drop-shadow-red-800 drop-shadow-red-900 drop-shadow-red-950 drop-shadow-orange-50 drop-shadow-orange-100 drop-shadow-orange-200 drop-shadow-orange-300 drop-shadow-orange-400 drop-shadow-orange-500 drop-shadow-orange-600 drop-shadow-orange-700 drop-shadow-orange-800 drop-shadow-orange-900 drop-shadow-orange-950 drop-shadow-amber-50 drop-shadow-amber-100 drop-shadow-amber-200 drop-shadow-amber-300 drop-shadow-amber-400 drop-shadow-amber-500 drop-shadow-amber-600 drop-shadow-amber-700 drop-shadow-amber-800 drop-shadow-amber-900 drop-shadow-amber-950 drop-shadow-yellow-50 drop-shadow-yellow-100 drop-shadow-yellow-200 drop-shadow-yellow-300 drop-shadow-yellow-400 drop-shadow-yellow-500 drop-shadow-yellow-600 drop-shadow-yellow-700 drop-shadow-yellow-800 drop-shadow-yellow-900 drop-shadow-yellow-950 drop-shadow-lime-50 drop-shadow-lime-100 drop-shadow-lime-200 drop-shadow-lime-300 drop-shadow-lime-400 drop-shadow-lime-500 drop-shadow-lime-600 drop-shadow-lime-700 drop-shadow-lime-800 drop-shadow-lime-900 drop-shadow-lime-950 drop-shadow-green-50 drop-shadow-green-100 drop-shadow-green-200 drop-shadow-green-300 drop-shadow-green-400 drop-shadow-green-500 drop-shadow-green-600 drop-shadow-green-700 drop-shadow-green-800 drop-shadow-green-900 drop-shadow-green-950 drop-shadow-emerald-50 drop-shadow-emerald-100 drop-shadow-emerald-200 drop-shadow-emerald-300 drop-shadow-emerald-400 drop-shadow-emerald-500 drop-shadow-emerald-600 drop-shadow-emerald-700 drop-shadow-emerald-800 drop-shadow-emerald-900 drop-shadow-emerald-950 drop-shadow-teal-50 drop-shadow-teal-100 drop-shadow-teal-200 drop-shadow-teal-300 drop-shadow-teal-400 drop-shadow-teal-500 drop-shadow-teal-600 drop-shadow-teal-700 drop-shadow-teal-800 drop-shadow-teal-900 drop-shadow-teal-950 drop-shadow-cyan-50 drop-shadow-cyan-100 drop-shadow-cyan-200 drop-shadow-cyan-300 drop-shadow-cyan-400 drop-shadow-cyan-500 drop-shadow-cyan-600 drop-shadow-cyan-700 drop-shadow-cyan-800 drop-shadow-cyan-900 drop-shadow-cyan-950 drop-shadow-sky-50 drop-shadow-sky-100 drop-shadow-sky-200 drop-shadow-sky-300 drop-shadow-sky-400 drop-shadow-sky-500 drop-shadow-sky-600 drop-shadow-sky-700 drop-shadow-sky-800 drop-shadow-sky-900 drop-shadow-sky-950 drop-shadow-blue-50 drop-shadow-blue-100 drop-shadow-blue-200 drop-shadow-blue-300 drop-shadow-blue-400 drop-shadow-blue-500 drop-shadow-blue-600 drop-shadow-blue-700 drop-shadow-blue-800 drop-shadow-blue-900 drop-shadow-blue-950 drop-shadow-indigo-50 drop-shadow-indigo-100 drop-shadow-indigo-200 drop-shadow-indigo-300 drop-shadow-indigo-400 drop-shadow-indigo-500 drop-shadow-indigo-600 drop-shadow-indigo-700 drop-shadow-indigo-800 drop-shadow-indigo-900 drop-shadow-indigo-950 drop-shadow-violet-50 drop-shadow-violet-100 drop-shadow-violet-200 drop-shadow-violet-300 drop-shadow-violet-400 drop-shadow-violet-500 drop-shadow-violet-600 drop-shadow-violet-700 drop-shadow-violet-800 drop-shadow-violet-900 drop-shadow-violet-950 drop-shadow-purple-50 drop-shadow-purple-100 drop-shadow-purple-200 drop-shadow-purple-300 drop-shadow-purple-400 drop-shadow-purple-500 drop-shadow-purple-600 drop-shadow-purple-700 drop-shadow-purple-800 drop-shadow-purple-900 drop-shadow-purple-950 drop-shadow-fuchsia-50 drop-shadow-fuchsia-100 drop-shadow-fuchsia-200 drop-shadow-fuchsia-300 drop-shadow-fuchsia-400 drop-shadow-fuchsia-500 drop-shadow-fuchsia-600 drop-shadow-fuchsia-700 drop-shadow-fuchsia-800 drop-shadow-fuchsia-900 drop-shadow-fuchsia-950 drop-shadow-pink-50 drop-shadow-pink-100 drop-shadow-pink-200 drop-shadow-pink-300 drop-shadow-pink-400 drop-shadow-pink-500 drop-shadow-pink-600 drop-shadow-pink-700 drop-shadow-pink-800 drop-shadow-pink-900 drop-shadow-pink-950 drop-shadow-rose-50 drop-shadow-rose-100 drop-shadow-rose-200 drop-shadow-rose-300 drop-shadow-rose-400 drop-shadow-rose-500 drop-shadow-rose-600 drop-shadow-rose-700 drop-shadow-rose-800 drop-shadow-rose-900 drop-shadow-rose-950 drop-shadow-slate-50 drop-shadow-slate-100 drop-shadow-slate-200 drop-shadow-slate-300 drop-shadow-slate-400 drop-shadow-slate-500 drop-shadow-slate-600 drop-shadow-slate-700 drop-shadow-slate-800 drop-shadow-slate-900 drop-shadow-slate-950 drop-shadow-gray-50 drop-shadow-gray-100 drop-shadow-gray-200 drop-shadow-gray-300 drop-shadow-gray-400 drop-shadow-gray-500 drop-shadow-gray-600 drop-shadow-gray-700 drop-shadow-gray-800 drop-shadow-gray-900 drop-shadow-gray-950 drop-shadow-zinc-50 drop-shadow-zinc-100 drop-shadow-zinc-200 drop-shadow-zinc-300 drop-shadow-zinc-400 drop-shadow-zinc-500 drop-shadow-zinc-600 drop-shadow-zinc-700 drop-shadow-zinc-800 drop-shadow-zinc-900 drop-shadow-zinc-950 drop-shadow-neutral-50 drop-shadow-neutral-100 drop-shadow-neutral-200 drop-shadow-neutral-300 drop-shadow-neutral-400 drop-shadow-neutral-500 drop-shadow-neutral-600 drop-shadow-neutral-700 drop-shadow-neutral-800 drop-shadow-neutral-900 drop-shadow-neutral-950 drop-shadow-stone-50 drop-shadow-stone-100 drop-shadow-stone-200 drop-shadow-stone-300 drop-shadow-stone-400 drop-shadow-stone-500 drop-shadow-stone-600 drop-shadow-stone-700 drop-shadow-stone-800 drop-shadow-stone-900 drop-shadow-stone-950 grayscale grayscale-<number> grayscale-(<custom-property>) grayscale-[<value>] hue-rotate-<number> -hue-rotate-<number> hue-rotate-(<custom-property>) hue-rotate-[<value>] invert invert-<number> invert-(<custom-property>) invert-[<value>] saturate-<number> saturate-(<custom-property>) saturate-[<value>] sepia sepia-<number> sepia-(<custom-property>) sepia-[<value>]");
 
@@ -59,9 +177,6 @@
 
 /* Cursor */
 @source inline("fill-none fill-inherit fill-current fill-transparent fill-black fill-white fill-red-50 fill-red-100 fill-red-200 fill-red-300 fill-red-400 fill-red-500 fill-red-600 fill-red-700 fill-red-800 fill-red-900 fill-red-950 fill-orange-50 fill-orange-100 fill-orange-200 fill-orange-300 fill-orange-400 fill-orange-500 fill-orange-600 fill-orange-700 fill-orange-800 fill-orange-900 fill-orange-950 fill-amber-50 fill-amber-100 fill-amber-200 fill-amber-300 fill-amber-400 fill-amber-500 fill-amber-600 fill-amber-700 fill-amber-800 fill-amber-900 fill-amber-950 fill-yellow-50 fill-yellow-100 fill-yellow-200 fill-yellow-300 fill-yellow-400 fill-yellow-500 fill-yellow-600 fill-yellow-700 fill-yellow-800 fill-yellow-900 fill-yellow-950 fill-lime-50 fill-lime-100 fill-lime-200 fill-lime-300 fill-lime-400 fill-lime-500 fill-lime-600 fill-lime-700 fill-lime-800 fill-lime-900 fill-lime-950 fill-green-50 fill-green-100 fill-green-200 fill-green-300 fill-green-400 fill-green-500 fill-green-600 fill-green-700 fill-green-800 fill-green-900 fill-green-950 fill-emerald-50 fill-emerald-100 fill-emerald-200 fill-emerald-300 fill-emerald-400 fill-emerald-500 fill-emerald-600 fill-emerald-700 fill-emerald-800 fill-emerald-900 fill-emerald-950 fill-teal-50 fill-teal-100 fill-teal-200 fill-teal-300 fill-teal-400 fill-teal-500 fill-teal-600 fill-teal-700 fill-teal-800 fill-teal-900 fill-teal-950 fill-cyan-50 fill-cyan-100 fill-cyan-200 fill-cyan-300 fill-cyan-400 fill-cyan-500 fill-cyan-600 fill-cyan-700 fill-cyan-800 fill-cyan-900 fill-cyan-950 fill-sky-50 fill-sky-100 fill-sky-200 fill-sky-300 fill-sky-400 fill-sky-500 fill-sky-600 fill-sky-700 fill-sky-800 fill-sky-900 fill-sky-950 fill-blue-50 fill-blue-100 fill-blue-200 fill-blue-300 fill-blue-400 fill-blue-500 fill-blue-600 fill-blue-700 fill-blue-800 fill-blue-900 fill-blue-950 fill-indigo-50 fill-indigo-100 fill-indigo-200 fill-indigo-300 fill-indigo-400 fill-indigo-500 fill-indigo-600 fill-indigo-700 fill-indigo-800 fill-indigo-900 fill-indigo-950 fill-violet-50 fill-violet-100 fill-violet-200 fill-violet-300 fill-violet-400 fill-violet-500 fill-violet-600 fill-violet-700 fill-violet-800 fill-violet-900 fill-violet-950 fill-purple-50 fill-purple-100 fill-purple-200 fill-purple-300 fill-purple-400 fill-purple-500 fill-purple-600 fill-purple-700 fill-purple-800 fill-purple-900 fill-purple-950 fill-fuchsia-50 fill-fuchsia-100 fill-fuchsia-200 fill-fuchsia-300 fill-fuchsia-400 fill-fuchsia-500 fill-fuchsia-600 fill-fuchsia-700 fill-fuchsia-800 fill-fuchsia-900 fill-fuchsia-950 fill-pink-50 fill-pink-100 fill-pink-200 fill-pink-300 fill-pink-400 fill-pink-500 fill-pink-600 fill-pink-700 fill-pink-800 fill-pink-900 fill-pink-950 fill-rose-50 fill-rose-100 fill-rose-200 fill-rose-300 fill-rose-400 fill-rose-500 fill-rose-600 fill-rose-700 fill-rose-800 fill-rose-900 fill-rose-950 fill-slate-50 fill-slate-100 fill-slate-200 fill-slate-300 fill-slate-400 fill-slate-500 fill-slate-600 fill-slate-700 fill-slate-800 fill-slate-900 fill-slate-950 fill-gray-50 fill-gray-100 fill-gray-200 fill-gray-300 fill-gray-400 fill-gray-500 fill-gray-600 fill-gray-700 fill-gray-800 fill-gray-900 fill-gray-950 fill-zinc-50 fill-zinc-100 fill-zinc-200 fill-zinc-300 fill-zinc-400 fill-zinc-500 fill-zinc-600 fill-zinc-700 fill-zinc-800 fill-zinc-900 fill-zinc-950 fill-neutral-50 fill-neutral-100 fill-neutral-200 fill-neutral-300 fill-neutral-400 fill-neutral-500 fill-neutral-600 fill-neutral-700 fill-neutral-800 fill-neutral-900 fill-neutral-950 fill-stone-50 fill-stone-100 fill-stone-200 fill-stone-300 fill-stone-400 fill-stone-500 fill-stone-600 fill-stone-700 fill-stone-800 fill-stone-900 fill-stone-950 fill-(<custom-property>) fill-[<color>] stroke-none stroke-inherit stroke-current stroke-transparent stroke-black stroke-white stroke-red-50 stroke-red-100 stroke-red-200 stroke-red-300 stroke-red-400 stroke-red-500 stroke-red-600 stroke-red-700 stroke-red-800 stroke-red-900 stroke-red-950 stroke-orange-50 stroke-orange-100 stroke-orange-200 stroke-orange-300 stroke-orange-400 stroke-orange-500 stroke-orange-600 stroke-orange-700 stroke-orange-800 stroke-orange-900 stroke-orange-950 stroke-amber-50 stroke-amber-100 stroke-amber-200 stroke-amber-300 stroke-amber-400 stroke-amber-500 stroke-amber-600 stroke-amber-700 stroke-amber-800 stroke-amber-900 stroke-amber-950 stroke-yellow-50 stroke-yellow-100 stroke-yellow-200 stroke-yellow-300 stroke-yellow-400 stroke-yellow-500 stroke-yellow-600 stroke-yellow-700 stroke-yellow-800 stroke-yellow-900 stroke-yellow-950 stroke-lime-50 stroke-lime-100 stroke-lime-200 stroke-lime-300 stroke-lime-400 stroke-lime-500 stroke-lime-600 stroke-lime-700 stroke-lime-800 stroke-lime-900 stroke-lime-950 stroke-green-50 stroke-green-100 stroke-green-200 stroke-green-300 stroke-green-400 stroke-green-500 stroke-green-600 stroke-green-700 stroke-green-800 stroke-green-900 stroke-green-950 stroke-emerald-50 stroke-emerald-100 stroke-emerald-200 stroke-emerald-300 stroke-emerald-400 stroke-emerald-500 stroke-emerald-600 stroke-emerald-700 stroke-emerald-800 stroke-emerald-900 stroke-emerald-950 stroke-teal-50 stroke-teal-100 stroke-teal-200 stroke-teal-300 stroke-teal-400 stroke-teal-500 stroke-teal-600 stroke-teal-700 stroke-teal-800 stroke-teal-900 stroke-teal-950 stroke-cyan-50 stroke-cyan-100 stroke-cyan-200 stroke-cyan-300 stroke-cyan-400 stroke-cyan-500 stroke-cyan-600 stroke-cyan-700 stroke-cyan-800 stroke-cyan-900 stroke-cyan-950 stroke-sky-50 stroke-sky-100 stroke-sky-200 stroke-sky-300 stroke-sky-400 stroke-sky-500 stroke-sky-600 stroke-sky-700 stroke-sky-800 stroke-sky-900 stroke-sky-950 stroke-blue-50 stroke-blue-100 stroke-blue-200 stroke-blue-300 stroke-blue-400 stroke-blue-500 stroke-blue-600 stroke-blue-700 stroke-blue-800 stroke-blue-900 stroke-blue-950 stroke-indigo-50 stroke-indigo-100 stroke-indigo-200 stroke-indigo-300 stroke-indigo-400 stroke-indigo-500 stroke-indigo-600 stroke-indigo-700 stroke-indigo-800 stroke-indigo-900 stroke-indigo-950 stroke-violet-50 stroke-violet-100 stroke-violet-200 stroke-violet-300 stroke-violet-400 stroke-violet-500 stroke-violet-600 stroke-violet-700 stroke-violet-800 stroke-violet-900 stroke-violet-950 stroke-purple-50 stroke-purple-100 stroke-purple-200 stroke-purple-300 stroke-purple-400 stroke-purple-500 stroke-purple-600 stroke-purple-700 stroke-purple-800 stroke-purple-900 stroke-purple-950 stroke-fuchsia-50 stroke-fuchsia-100 stroke-fuchsia-200 stroke-fuchsia-300 stroke-fuchsia-400 stroke-fuchsia-500 stroke-fuchsia-600 stroke-fuchsia-700 stroke-fuchsia-800 stroke-fuchsia-900 stroke-fuchsia-950 stroke-pink-50 stroke-pink-100 stroke-pink-200 stroke-pink-300 stroke-pink-400 stroke-pink-500 stroke-pink-600 stroke-pink-700 stroke-pink-800 stroke-pink-900 stroke-pink-950 stroke-rose-50 stroke-rose-100 stroke-rose-200 stroke-rose-300 stroke-rose-400 stroke-rose-500 stroke-rose-600 stroke-rose-700 stroke-rose-800 stroke-rose-900 stroke-rose-950 stroke-slate-50 stroke-slate-100 stroke-slate-200 stroke-slate-300 stroke-slate-400 stroke-slate-500 stroke-slate-600 stroke-slate-700 stroke-slate-800 stroke-slate-900 stroke-slate-950 stroke-gray-50 stroke-gray-100 stroke-gray-200 stroke-gray-300 stroke-gray-400 stroke-gray-500 stroke-gray-600 stroke-gray-700 stroke-gray-800 stroke-gray-900 stroke-gray-950 stroke-zinc-50 stroke-zinc-100 stroke-zinc-200 stroke-zinc-300 stroke-zinc-400 stroke-zinc-500 stroke-zinc-600 stroke-zinc-700 stroke-zinc-800 stroke-zinc-900 stroke-zinc-950 stroke-neutral-50 stroke-neutral-100 stroke-neutral-200 stroke-neutral-300 stroke-neutral-400 stroke-neutral-500 stroke-neutral-600 stroke-neutral-700 stroke-neutral-800 stroke-neutral-900 stroke-neutral-950 stroke-stone-50 stroke-stone-100 stroke-stone-200 stroke-stone-300 stroke-stone-400 stroke-stone-500 stroke-stone-600 stroke-stone-700 stroke-stone-800 stroke-stone-900 stroke-stone-950 stroke-(<custom-property>) stroke-[<color>] stroke-<number> stroke-(length:<custom-property>) stroke-[<value>]");
-
-/* @source inline("bg-{x,y,t,b,l,r}-{1..10}"); */
-
 
 @plugin "daisyui" {
     themes: all;
