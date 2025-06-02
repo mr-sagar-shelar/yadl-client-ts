@@ -5,17 +5,10 @@ import { Text } from "yadl-ui-components";
 import type { DragDropProps } from "yadl-preview";
 import { useDnD } from "yadl-preview";
 import "react-fontpicker-ts/dist/index.css";
-import { useAtom } from 'jotai'
-import { fontSize, userText, fontFamily, userClasses, colorType, gradientDirection } from '@/atoms/text-tag-atoms'
 
 const SearchTextComponents = () => {
-    const [currentFontSize] = useAtom(fontSize);
-    const [currentText] = useAtom(userText);
-    const [currentFont] = useAtom(fontFamily);
-    const [currentCustomStyle] = useAtom(userClasses);
-    const [currentBackgroundType] = useAtom(colorType);
-    const [currentGradientDirection] = useAtom(gradientDirection);
-
+    const currentText = "Lorem Ipsum";
+    const currentFont = "Audiowide";
     const [_, setType] = useDnD();
     const onDragStart = (event: any, nodePayload: DragDropProps) => {
         if (setType) {
@@ -37,7 +30,7 @@ const SearchTextComponents = () => {
                                 type: "text",
                                 data: {
                                     icon: `${key}`,
-                                    classes: `text-wrap ${textDetails.classes} ${currentFontSize.key}${currentBackgroundType == "Gradient" ? " " + currentGradientDirection : ""} ${currentCustomStyle}`,
+                                    classes: `text-wrap ${textDetails.classes}`,
                                     text: currentText,
                                     fontFamily: currentFont,
                                     props: textDetails.props,
@@ -49,20 +42,20 @@ const SearchTextComponents = () => {
                     >
                         <Text
                             text={currentText}
-                            classes={`${textDetails.classes} ${currentFontSize.key}${currentBackgroundType == "Gradient" ? " " + currentGradientDirection : ""} ${currentCustomStyle}`}
+                            classes={`${textDetails.classes}`}
                         />
                     </div>
                 );
             });
         return listItems;
-    }, [currentFont, currentFontSize.key, currentText, currentBackgroundType, currentGradientDirection.key, currentCustomStyle]);
+    }, []);
 
     return (
         <>
             <div>
                 <div
                     style={{ fontFamily: currentFont }}
-                    className={`grid grid-cols-1 overflow-auto w-full h-full ${currentFontSize.key}`}
+                    className={`grid grid-cols-1 overflow-auto w-full h-full`}
                 >
                     {TextComponent}
                 </div>

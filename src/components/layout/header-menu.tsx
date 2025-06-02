@@ -7,7 +7,6 @@ import {
     MenubarRadioGroup,
     MenubarRadioItem,
     MenubarSeparator,
-    MenubarShortcut,
     MenubarSub,
     MenubarSubContent,
     MenubarSubTrigger,

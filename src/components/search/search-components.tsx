@@ -12,7 +12,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import SearchAwsIcons from "./search-aws-icons";
 import SearchSkillIcons from "./search-skill-icons";
 import SearchAzureIcons from "./search-azure-icons";
 import SearchGcpIcons from "./search-gcp-icons";
@@ -22,168 +21,8 @@ import SearchAvatars from "./search-avatars";
 import { ConfigureTextDialog } from "./dialogs/configure-text-dialog";
 import { ConfigureBoxDialog } from "./dialogs/configure-box-dialog";
 import { ConfigureAvatarDialog } from "./dialogs/configure-avatar-dialog";
-import { useState } from "react";
-
-
-const data = {
-  navMain: [
-    {
-      title: "Aws",
-      url: "#",
-      items: [
-        {
-          title: "Installation",
-          url: "#",
-        },
-        {
-          title: "Project Structure",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Azure",
-      url: "#",
-      items: [
-        {
-          title: "Routing",
-          url: "#",
-        },
-        {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
-        },
-        {
-          title: "Rendering",
-          url: "#",
-        },
-        {
-          title: "Caching",
-          url: "#",
-        },
-        {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "GCP",
-      url: "#",
-      items: [
-        {
-          title: "Components",
-          url: "#",
-        },
-        {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Skill",
-      url: "#",
-      items: [
-        {
-          title: "Accessibility",
-          url: "#",
-        },
-        {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Text",
-      url: "#",
-      items: [
-        {
-          title: "Contribution Guide",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Box",
-      url: "#",
-      items: [
-        {
-          title: "Contribution Guide",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Avatar",
-      url: "#",
-      items: [
-        {
-          title: "Contribution Guide",
-          url: "#",
-        },
-      ],
-    },
-  ],
-}
+import { lazy, Suspense, useState } from "react";
+const SearchAwsIconsLazy = lazy(() => import('./search-aws-icons'));
 
 export function SearchComponents() {
   let [configureTextDialogOpen, setConfigureTextDialogOpen] = useState<boolean>(false);
@@ -211,7 +50,9 @@ export function SearchComponents() {
                   </SidebarMenuButton>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <SearchAwsIcons />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchAwsIconsLazy />
+                  </Suspense>
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
@@ -285,7 +126,7 @@ export function SearchComponents() {
               </SidebarMenuItem>
             </Collapsible>
             <Collapsible
-              key={"text-components"}
+              key={"box-components"}
               className="group/collapsible"
             >
               <SidebarMenuItem>
@@ -303,7 +144,7 @@ export function SearchComponents() {
               </SidebarMenuItem>
             </Collapsible>
             <Collapsible
-              key={"text-components"}
+              key={"avatar-components"}
               className="group/collapsible"
             >
               <SidebarMenuItem>

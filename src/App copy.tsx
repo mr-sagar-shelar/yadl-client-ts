@@ -1,3 +1,5 @@
+// @ts-ignore
+/*
 import "./App.css";
 import "@xyflow/react/dist/style.css";
 import "yadl-preview/dist/yadl-preview.css";

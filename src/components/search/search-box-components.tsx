@@ -4,19 +4,9 @@ import { memo } from "react";
 import { BoxNames } from "@/components/constants/BoxNames";
 import type { DragDropProps } from "yadl-preview";
 import { useDnD } from "yadl-preview";
-import { userClasses, colorType, gradientDirection, borderStyle, borderRadius, borderSize, opacity } from '@/atoms/box-tag-atoms'
-import { useAtom } from 'jotai'
 
 
 const SearchBoxes = () => {
-    const [currentCustomStyle] = useAtom(userClasses);
-    const [currentBackgroundType] = useAtom(colorType);
-    const [currentGradientDirection] = useAtom(gradientDirection);
-    const [currentBorderStyle] = useAtom(borderStyle);
-    const [currentBorderRadius] = useAtom(borderRadius);
-    const [currentBorderSize] = useAtom(borderSize);
-    const [currentOpacity] = useAtom(opacity);
-
     const [_, setType] = useDnD();
     const onDragStart = (event: any, nodePayload: DragDropProps) => {
         if (setType) {
@@ -44,21 +34,21 @@ const SearchBoxes = () => {
                                         component: boxDetails.component,
                                         props: {
                                             ...boxDetails.props,
-                                            classes: `${boxDetails.props.classes} ${currentOpacity.key} ${currentBorderSize.key} ${currentBorderRadius.key} ${currentBorderStyle.key} ${currentCustomStyle} ${currentBackgroundType == "Gradient" ? " " + currentGradientDirection : ""}`,
+                                            classes: `${boxDetails.props.classes}`,
                                         }
                                     },
                                 })
                             }
                             draggable
                         >
-                            {Box && <Box {...boxDetails.props} classes={`${boxDetails.props.classes} ${currentOpacity.key} ${currentBorderSize.key} ${currentBorderRadius.key} ${currentBorderStyle.key} ${currentCustomStyle}${currentBackgroundType == "Gradient" ? " " + currentGradientDirection : ""}`} />}
+                            {Box && <Box {...boxDetails.props} classes={`${boxDetails.props.classes}`} />}
                         </div>
                     );
                 }
                 return null;
             });
         return listItems;
-    }, [currentBorderStyle.key, currentBorderRadius.key, currentBorderSize.key, currentOpacity.key, currentCustomStyle, currentBackgroundType, currentGradientDirection.key]);
+    }, []);
 
     return (
         <>
