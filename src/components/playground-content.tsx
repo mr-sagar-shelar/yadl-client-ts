@@ -9,9 +9,9 @@ import { useAtom, useAtomValue } from 'jotai'
 import { codeVisible, searchShapesVisible } from '@/atoms/application-config-atoms'
 import { previewTheme } from '@/atoms/application-config-atoms'
 import { YadlEditor, YadlEditorRef, type YadlEditorResponse } from "yadl-editor";
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
-import { Examples } from "../examples";
+// import { Examples } from "../examples";
 
 
 export default function PlaygroundContent() {
@@ -22,7 +22,7 @@ export default function PlaygroundContent() {
     const [currentNodes, setCurrentNodes] = useState<Node[]>([]);
     const [currentEdges, setCurrentEdges] = useState<Edge[]>([]);
     const [currentFonts, setCurrentFonts] = useState<string[] | undefined>([]);
-    const [currentCode] = useState<string>(Examples[0].code);
+    const [currentCode, setCurrentCode] = useState<string>();
 
     const loadFontFromObject = useCallback(
         (font: string) => {
@@ -42,6 +42,18 @@ export default function PlaygroundContent() {
         },
         []
     );
+
+    useEffect(() => {
+        let code = "";
+        const editorCodeElement = document.getElementById("editor-code");
+        if (editorCodeElement) {
+            code = editorCodeElement.dataset.code || "";
+        }
+        // else {
+        //     code = Examples[0].code;
+        // }
+        setCurrentCode(code);
+    }, []);
 
     useMemo(() => {
         currentFonts?.forEach((fontName) => {
