@@ -45,7 +45,7 @@
     "yadl-gcp-icons": "^1.0.6",
     "yadl-preview": "file:../yadl-ui/packages/yadl-preview",
     "yadl-skill-icons": "^1.0.6",
-    "yadl-ui-components": "^1.0.6",
+    "yadl-ui-components": "file:../yadl-ui/packages/yadl-ui-components",
     "zod": "^3.25.42"
   },
   "devDependencies": {
