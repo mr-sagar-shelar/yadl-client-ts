@@ -54,7 +54,7 @@ const SearchTextComponents = () => {
                 );
             });
         return listItems;
-    }, [currentAuthorNameText, currentAuthorCaptionText]);
+    }, [currentAuthorNameText, currentAuthorCaptionText, currentAuthorImageSource]);
 
     return (
         <>
