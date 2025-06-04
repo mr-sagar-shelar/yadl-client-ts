@@ -1,5 +1,5 @@
-import { Plus } from "lucide-react"
-import { Button } from "@/components/ui/button"
+// import { Plus } from "lucide-react"
+// import { Button } from "@/components/ui/button"
 import { HeaderMenu } from "./layout/header-menu"
 import { PresetShare } from "./layout/preset-share"
 import { ThemeToggle } from "./layout/mode-toggle"
@@ -11,9 +11,9 @@ export function SiteHeader() {
         <HeaderMenu />
         <div className="ml-auto px-3 flex gap-4">
           <PresetShare />
-          <Button >
+          {/* <Button >
             <Plus />
-          </Button>
+          </Button> */}
           <ThemeToggle />
         </div>
       </div>

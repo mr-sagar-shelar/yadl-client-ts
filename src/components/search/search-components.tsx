@@ -20,15 +20,18 @@ const SearchGcpIconsLazy = lazy(() => import('./search-gcp-icons'));
 const SearchTextComponentsLazy = lazy(() => import('./search-text-components'));
 const SearchBoxComponentsLazy = lazy(() => import('./search-box-components'));
 const SearchAvatarsLazy = lazy(() => import('./search-avatars'));
+const SearchAuthorLazy = lazy(() => import('./search-author-components'));
 // import SearchAvatars from "./search-avatars";
 import { ConfigureTextDialog } from "./dialogs/configure-text-dialog";
 import { ConfigureBoxDialog } from "./dialogs/configure-box-dialog";
 import { ConfigureAvatarDialog } from "./dialogs/configure-avatar-dialog";
+import { ConfigureAuthorDialog } from "./dialogs/configure-author-dialog";
 
 export function SearchComponents() {
   let [configureTextDialogOpen, setConfigureTextDialogOpen] = useState<boolean>(false);
   let [configureBoxDialogOpen, setConfigureBoxDialogOpen] = useState<boolean>(false);
   let [configureAvatarDialogOpen, setConfigureAvatarDialogOpen] = useState<boolean>(false);
+  let [configureAuthorDialogOpen, setConfigureAuthorDialogOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -172,6 +175,26 @@ export function SearchComponents() {
                 </CollapsibleContent>
               </SidebarMenuItem>
             </Collapsible>
+            <Collapsible
+              key={"author-components"}
+              className="group/collapsible"
+            >
+              <SidebarMenuItem>
+                <CollapsibleTrigger asChild>
+                  <SidebarMenuButton>
+                    Author
+                    <Cog onClick={(event) => { setConfigureAuthorDialogOpen(true); event.preventDefault(); }} className="m-1 ml-auto hover:bg-primary hover:text-secondary" />
+                    <Plus className="m-1 group-data-[state=open]/collapsible:hidden hover:bg-primary hover:text-secondary" />
+                    <Minus className="m-1 group-data-[state=closed]/collapsible:hidden hover:bg-primary hover:text-secondary" />
+                  </SidebarMenuButton>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <SearchAuthorLazy />
+                  </Suspense>
+                </CollapsibleContent>
+              </SidebarMenuItem>
+            </Collapsible>
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
@@ -183,6 +206,7 @@ export function SearchComponents() {
       <ConfigureTextDialog onStatusChange={(isOpen) => { setConfigureTextDialogOpen(isOpen) }} isOpen={configureTextDialogOpen} />
       <ConfigureBoxDialog onStatusChange={(isOpen) => { setConfigureBoxDialogOpen(isOpen) }} isOpen={configureBoxDialogOpen} />
       <ConfigureAvatarDialog onStatusChange={(isOpen) => { setConfigureAvatarDialogOpen(isOpen) }} isOpen={configureAvatarDialogOpen} />
+      <ConfigureAuthorDialog onStatusChange={(isOpen) => { setConfigureAuthorDialogOpen(isOpen) }} isOpen={configureAuthorDialogOpen} />
     </>
   )
 }

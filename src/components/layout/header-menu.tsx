@@ -81,7 +81,7 @@ export function HeaderMenu() {
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger>Theme</MenubarTrigger>
+                <MenubarTrigger>Preview Theme</MenubarTrigger>
                 <MenubarContent>
                     <ScrollArea className="h-72 w-48">
                         <MenubarRadioGroup
