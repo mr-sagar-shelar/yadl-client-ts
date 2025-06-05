@@ -117,6 +117,12 @@ export default function PlaygroundContent() {
                     </div>
                 </ResizablePanel>
             </ResizablePanelGroup>
+            <video
+                id="video-el"
+                controls
+                autoPlay
+                style={{ width: "100%", height: "400px" }}
+            />
         </div>
     )
 }

@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fix-webm-duration/fix": "^1.0.1",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-collapsible": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.14",
@@ -28,6 +29,9 @@
     "@xyflow/react": "^12.5.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dom-to-image-more": "^3.6.0",
+    "file-saver": "^2.0.5",
+    "get-blob-duration": "^1.2.0",
     "html-to-image": "^1.11.13",
     "jotai": "^2.12.5",
     "lodash": "^4.17.21",
