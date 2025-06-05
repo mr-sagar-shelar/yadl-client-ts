@@ -5,17 +5,26 @@ import { Text } from "yadl-ui-components";
 import type { DragDropProps } from "yadl-preview";
 import { useDnD } from "yadl-preview";
 import "react-fontpicker-ts/dist/index.css";
+import { useAtom } from 'jotai'
+import { fontFamily } from '@/atoms/text-tag-atoms'
+import { loadFontFromObject } from "@/lib/utils";
 
 const SearchTextComponents = () => {
     const currentText = "Lorem Ipsum";
-    const currentFont = "Audiowide";
     const [_, setType] = useDnD();
+    const [currentFontFamily] = useAtom(fontFamily);
+
+
     const onDragStart = (event: any, nodePayload: DragDropProps) => {
         if (setType) {
             setType(nodePayload);
         }
         event.dataTransfer.effectAllowed = "move";
     };
+
+    useMemo(() => {
+        loadFontFromObject(currentFontFamily)
+    }, [currentFontFamily]);
 
     const TextComponent = useMemo(() => {
         const listItems = Object.entries(TextNames)
@@ -24,7 +33,7 @@ const SearchTextComponents = () => {
                 return (
                     <div
                         key={key}
-                        className="m-2 cursor-grab px-5"
+                        className="m-2 cursor-grab px-2"
                         onDragStart={(event) =>
                             onDragStart(event, {
                                 type: "text",
@@ -32,8 +41,12 @@ const SearchTextComponents = () => {
                                     icon: `${key}`,
                                     classes: `text-wrap ${textDetails.classes}`,
                                     text: currentText,
-                                    fontFamily: currentFont,
-                                    props: textDetails.props,
+                                    fontFamily: currentFontFamily,
+                                    props: {
+                                        ...textDetails.props,
+                                        width: 100,
+                                        height: 20
+                                    }
                                 },
                             })
                         }
@@ -54,7 +67,7 @@ const SearchTextComponents = () => {
         <>
             <div>
                 <div
-                    style={{ fontFamily: currentFont }}
+                    style={{ fontFamily: currentFontFamily }}
                     className={`grid grid-cols-1 overflow-auto w-full h-full`}
                 >
                     {TextComponent}

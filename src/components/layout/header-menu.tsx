@@ -2,14 +2,9 @@ import {
     Menubar,
     MenubarCheckboxItem,
     MenubarContent,
-    MenubarItem,
     MenubarMenu,
     MenubarRadioGroup,
     MenubarRadioItem,
-    MenubarSeparator,
-    MenubarSub,
-    MenubarSubContent,
-    MenubarSubTrigger,
     MenubarTrigger,
 } from "@/components/ui/menubar"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -38,7 +33,7 @@ export function HeaderMenu() {
 
     return (
         <Menubar className="border-0 shadow-none">
-            <MenubarMenu>
+            {/* <MenubarMenu>
                 <MenubarTrigger>File</MenubarTrigger>
                 <MenubarContent>
                     <MenubarItem>Copy code</MenubarItem>
@@ -60,7 +55,7 @@ export function HeaderMenu() {
                         </MenubarSubContent>
                     </MenubarSub>
                 </MenubarContent>
-            </MenubarMenu>
+            </MenubarMenu> */}
             <MenubarMenu>
                 <MenubarTrigger>View</MenubarTrigger>
                 <MenubarContent>
@@ -76,8 +71,8 @@ export function HeaderMenu() {
                     >
                         Shapes
                     </MenubarCheckboxItem>
-                    <MenubarSeparator />
-                    <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                    {/* <MenubarSeparator />
+                    <MenubarItem inset>Toggle Fullscreen</MenubarItem> */}
                 </MenubarContent>
             </MenubarMenu>
             <MenubarMenu>
@@ -90,8 +85,8 @@ export function HeaderMenu() {
                             {renderThemeNames()}
                         </MenubarRadioGroup>
                     </ScrollArea>
-                    <MenubarSeparator />
-                    <MenubarItem disabled inset>Make your theme.</MenubarItem>
+                    {/* <MenubarSeparator />
+                    <MenubarItem disabled inset>Make your theme.</MenubarItem> */}
                 </MenubarContent>
             </MenubarMenu>
         </Menubar>

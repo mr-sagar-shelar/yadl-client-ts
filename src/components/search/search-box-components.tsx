@@ -26,6 +26,7 @@ const SearchBoxes = () => {
                     return (
                         <div
                             key={key}
+                            className="m-2 cursor-grab px-2"
                             title={boxDetails.name}
                             onDragStart={(event) =>
                                 onDragStart(event, {
@@ -52,8 +53,8 @@ const SearchBoxes = () => {
 
     return (
         <>
-            <div className="h-full" data-theme="light">
-                <div className="flex flex-wrap gap-5 overflow-auto h-full">
+            <div className="h-full">
+                <div className="flex flex-wrap overflow-auto h-full">
                     {IconsComponent}
                 </div>
             </div>

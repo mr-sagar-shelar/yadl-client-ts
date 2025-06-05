@@ -9,8 +9,9 @@ import { useAtom, useAtomValue } from 'jotai'
 import { codeVisible, searchShapesVisible } from '@/atoms/application-config-atoms'
 import { previewTheme } from '@/atoms/application-config-atoms'
 import { YadlEditor, YadlEditorRef, type YadlEditorResponse } from "yadl-editor";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
+import { loadFontFromObject } from "@/lib/utils";
 // import { Examples } from "../examples";
 
 
@@ -23,25 +24,6 @@ export default function PlaygroundContent() {
     const [currentEdges, setCurrentEdges] = useState<Edge[]>([]);
     const [currentFonts, setCurrentFonts] = useState<string[] | undefined>([]);
     const [currentCode, setCurrentCode] = useState<string>();
-
-    const loadFontFromObject = useCallback(
-        (font: string) => {
-            let cssId = 'google-font-' + font
-
-            const cssIdAll = cssId + '-all'
-            const existing = document.getElementById(cssId)
-            const existingAll = document.getElementById(cssIdAll)
-            if (!existing && !existingAll && font) {
-                const link = document.createElement('link')
-                link.rel = 'stylesheet'
-                link.id = cssId
-                link.href = `https://fonts.googleapis.com/css2?family=${font}&display=swap`;
-                link.setAttribute('data-testid', cssId) // for react testing library
-                document.head.appendChild(link)
-            }
-        },
-        []
-    );
 
     useEffect(() => {
         let code = "";
