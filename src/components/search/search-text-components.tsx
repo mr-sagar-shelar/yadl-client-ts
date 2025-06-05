@@ -33,7 +33,7 @@ const SearchTextComponents = () => {
                 return (
                     <div
                         key={key}
-                        className="m-2 cursor-grab px-2"
+                        className="m-2 cursor-grab px-2  justify-center !w-full"
                         onDragStart={(event) =>
                             onDragStart(event, {
                                 type: "text",
@@ -50,7 +50,6 @@ const SearchTextComponents = () => {
                                 },
                             })
                         }
-                        draggable
                         title={textDetails.name}
                     >
                         <Text

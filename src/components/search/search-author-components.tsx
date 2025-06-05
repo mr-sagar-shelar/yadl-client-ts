@@ -38,14 +38,16 @@ const SearchTextComponents = () => {
                                     name: currentAuthorNameText,
                                     caption: currentAuthorCaptionText,
                                     src: currentAuthorImageSource,
+                                    height: 100,
+                                    width: 300
                                 },
                             })
                         }
-                        draggable
                         title={textDetails.name}
                     >
                         <Author
                             {...textDetails}
+                            width={300}
                             name={currentAuthorNameText}
                             caption={currentAuthorCaptionText}
                             src={currentAuthorImageSource}

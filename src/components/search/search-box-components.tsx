@@ -40,7 +40,6 @@ const SearchBoxes = () => {
                                     },
                                 })
                             }
-                            draggable
                         >
                             {Box && <Box {...boxDetails.props} classes={`${boxDetails.props.classes}`} />}
                         </div>

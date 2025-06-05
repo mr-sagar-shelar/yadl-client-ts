@@ -38,7 +38,6 @@ const SearchAvatars = () => {
                                 },
                             })
                         }
-                        draggable
                     >
                         <HoverCard>
                             <HoverCardTrigger>
