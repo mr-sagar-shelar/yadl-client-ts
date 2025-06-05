@@ -182,4 +182,5 @@
     themes: all;
 }
 
+@source "../node_modules/yadl-ui-components";
 @source "../node_modules/yadl-preview";
