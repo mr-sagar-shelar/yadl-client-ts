@@ -12,6 +12,8 @@ import { YadlEditor, YadlEditorRef, type YadlEditorResponse } from "yadl-editor"
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
 import { loadFontFromObject } from "@/lib/utils";
+import { useTheme } from "@/components/theme-provider"
+
 // import { Examples } from "../examples";
 
 
@@ -24,6 +26,8 @@ export default function PlaygroundContent() {
     const [currentEdges, setCurrentEdges] = useState<Edge[]>([]);
     const [currentFonts, setCurrentFonts] = useState<string[] | undefined>([]);
     const [currentCode, setCurrentCode] = useState<string>();
+    const { theme } = useTheme()
+
 
     useEffect(() => {
         let code = "";
@@ -62,6 +66,7 @@ export default function PlaygroundContent() {
                             }}
                             code={currentCode}
                             onLoad={() => { }}
+                            theme={theme == "dark" ? "vs-dark" : "vs-light"}
                         />
                     </div>
                 </ResizablePanel>
