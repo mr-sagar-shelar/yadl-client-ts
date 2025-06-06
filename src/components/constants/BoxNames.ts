@@ -176,7 +176,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-red-500 via-orange-500 to-yellow-500"
+            classes: "from-red-500 via-orange-500 to-yellow-500 bg-linear-to-t"
         },
     },
     boxGradient2: {
@@ -186,7 +186,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-cyan-700 via-blue-500 to-indigo-600"
+            classes: "from-cyan-700 via-blue-500 to-indigo-600 bg-linear-to-t"
         },
     },
     boxGradient3: {
@@ -196,7 +196,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-indigo-500 via-purple-500 to-pink-500"
+            classes: "from-indigo-500 via-purple-500 to-pink-500 bg-linear-to-t"
         },
     },
     boxGradient4: {
@@ -206,7 +206,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-pink-500 via-red-500 to-orange-500"
+            classes: "from-pink-500 via-red-500 to-orange-500 bg-linear-to-t"
         },
     },
     boxGradient5: {
@@ -216,7 +216,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-cyan-400 via-blue-400 to-indigo-400"
+            classes: "from-cyan-400 via-blue-400 to-indigo-400 bg-linear-to-t"
         },
     },
     boxGradient6: {
@@ -226,7 +226,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-yellow-500 via-orange-500 to-red-500"
+            classes: "from-yellow-500 via-orange-500 to-red-500 bg-linear-to-t"
         },
     },
     boxGradient7: {
@@ -236,7 +236,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-green-500 via-emerald-500 to-teal-500"
+            classes: "from-green-500 via-emerald-500 to-teal-500 bg-linear-to-t"
         },
     },
     boxGradient8: {
@@ -246,7 +246,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-amber-500 via-orange-500 to-red-500"
+            classes: "from-amber-500 via-orange-500 to-red-500 bg-linear-to-t"
         },
     },
     boxGradient9: {
@@ -256,7 +256,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-blue-500 via-cyan-500 to-teal-500"
+            classes: "from-blue-500 via-cyan-500 to-teal-500 bg-linear-to-t"
         },
     },
     boxGradient10: {
@@ -266,7 +266,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-purple-500 via-indigo-500 to-blue-500"
+            classes: "from-purple-500 via-indigo-500 to-blue-500 bg-linear-to-t"
         },
     },
     boxGradient11: {
@@ -286,7 +286,7 @@ export const BoxNames: BoxNames = {
         props: {
             height: 100,
             width: 100,
-            classes: "from-rose-500 via-pink-500 to-red-500"
+            classes: "from-rose-500 via-pink-500 to-red-500 bg-linear-to-t"
         },
     }
 };
