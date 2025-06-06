@@ -16,7 +16,8 @@
     "ui": "@/components/ui",
     "lib": "@/lib",
     "hooks": "@/hooks",
-    "atoms": "@/atoms"
+    "atoms": "@/atoms",
+    "examples": "@/examples"
   },
   "iconLibrary": "lucide"
 }

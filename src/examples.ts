@@ -32,15 +32,6 @@ export const Examples: CodeExample[] = [
       position: { x : 150 y : 10 }
       icon : skillIconBabel
 />
-<Author
-      id : "Author1"
-      fontFamily : "Sarif"
-      profileHandle : "@Sagar"
-      profilePic : "https://www.google.com"
-      classes : ""
-      dimension: { height : 10 width : 10 }
-      position: { x : 10 y : 10 }
-/>
 <Avatar
         id : "Avatar1"
       accessoriesType : Blank

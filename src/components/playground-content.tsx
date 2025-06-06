@@ -13,9 +13,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
 import { loadFontFromObject } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider"
-
-// import { Examples } from "../examples";
-
+// import { Examples } from "@/examples/generic"
 
 export default function PlaygroundContent() {
     const [isCodeVisible] = useAtom(codeVisible);
@@ -35,9 +33,7 @@ export default function PlaygroundContent() {
         if (editorCodeElement) {
             code = editorCodeElement.dataset.code || "";
         }
-        // else {
-        //     code = Examples[0].code;
-        // }
+        // code = Examples[0].code;
         setCurrentCode(code);
     }, []);
 
