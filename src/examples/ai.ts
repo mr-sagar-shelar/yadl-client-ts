@@ -22,28 +22,33 @@ export const Examples: CodeExample[] = [
 <Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-1">
   <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>\` 
-position: { x: 171 y: 310 }
+position: { x: 170 y: 290 }
 />
 <Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
 </svg>\` 
-position: { x: 171 y: 360 }
+position: { x: 170 y: 350 }
 />
 <Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
 </svg>\` 
-position: { x: 171 y: 410 }
+position: { x: 170 y: 410 }
 />
 <Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m0-3-3-3m0 0-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75" />
 </svg>\` 
-position: { x: 171 y: 460 }
+position: { x: 170 y: 470 }
 />
 <Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-2">
   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
 </svg>\` 
-position: { x: 171 y: 510 }
+position: { x: 170 y: 530 }
 />
+<Edge source: "svg1" target: "svg2" sourceHandle: bottom targetHandle: top type : default />
+<Edge source: "svg2" target: "svg3" sourceHandle: bottom targetHandle: top type : default />
+<Edge source: "svg3" target: "svg4" sourceHandle: bottom targetHandle: top type : default />
+<Edge source: "svg4" target: "svg5" sourceHandle: bottom targetHandle: top type : default />
+
 
 
 `
