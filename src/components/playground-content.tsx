@@ -13,7 +13,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Edge, Node } from "@xyflow/react";
 import { loadFontFromObject } from "@/lib/utils";
 import { useTheme } from "@/components/theme-provider"
-// import { Examples } from "@/examples/generic"
+// import { Examples } from "@/examples/ai"
 
 export default function PlaygroundContent() {
     const [isCodeVisible] = useAtom(codeVisible);
@@ -28,13 +28,16 @@ export default function PlaygroundContent() {
 
 
     useEffect(() => {
-        let code = "";
-        const editorCodeElement = document.getElementById("editor-code");
-        if (editorCodeElement) {
-            code = editorCodeElement.dataset.code || "";
-        }
+        // let code = "";
+        // const editorCodeElement = document.getElementById("editor-code");
+        // if (editorCodeElement) {
+        //     code = editorCodeElement.dataset.code || "";
+        // }
         // code = Examples[0].code;
-        setCurrentCode(code);
+        let code = localStorage.getItem("app-current-code") || "";
+        if (code != "") {
+            setCurrentCode(code);
+        }
     }, []);
 
     useMemo(() => {
@@ -63,6 +66,9 @@ export default function PlaygroundContent() {
                             code={currentCode}
                             onLoad={() => { }}
                             theme={theme == "dark" ? "vs-dark" : "vs-light"}
+                            onCodeChange={(code: string) => {
+                                localStorage.setItem("app-current-code", code);
+                            }}
                         />
                     </div>
                 </ResizablePanel>
