@@ -1,11 +1,11 @@
 interface CodeExample {
-    title: string;
-    code: string;
+  title: string;
+  code: string;
 }
 export const Examples: CodeExample[] = [
-    {
-        "title": "8 Different Specialized AI Models",
-        "code": `
+  {
+    "title": "8 Different Specialized AI Models",
+    "code": `
 
 // 8 Different Specialized AI Models
 <Box type: Box1 position: { x: 56 y: 117 } dimension: { width: 1200 height: 1200 } classes: "bg-info/50" />
@@ -18,7 +18,7 @@ export const Examples: CodeExample[] = [
 <Text text: "VLM" position: { x: 115 y: 700 } dimension: { width: 164 height: 52 } fontFamily: "Black Ops One" classes: "text-wrap mx-auto break-words truncate text-primary-content text-5xl w-[130px] bg-linear-to-t" />
 <Text text: "SLM" position: { x: 391 y: 702 } dimension: { width: 169 height: 44 } fontFamily: "Black Ops One" classes: "text-wrap mx-auto break-words truncate text-primary-content text-5xl w-[130px] bg-linear-to-t" />
 <Text text: "MLM" position: { x: 685 y: 703 } dimension: { width: 160 height: 50 } fontFamily: "Black Ops One" classes: "text-wrap mx-auto break-words truncate text-primary-content text-5xl w-[130px] bg-linear-to-t" />
-<Text text: "SAM" position: { x: 959 y: 699 } dimension: { width: 141 height: 58 } fontFamily: "Black Ops One" classes: "text-wrap mx-auto break-words truncate text-primary-content text-5xl w-[130px] bg-linear-to-t" />
+<Text text: "SAM" position: { x: 956 y: 703 } dimension: { width: 141 height: 58 } fontFamily: "Black Ops One" classes: "text-wrap mx-auto break-words truncate text-primary-content text-5xl w-[130px] bg-linear-to-t" />
 <Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-1">
   <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>\` 
@@ -44,13 +44,42 @@ position: { x: 170 y: 470 }
 </svg>\` 
 position: { x: 170 y: 530 }
 />
-<Edge source: "svg1" target: "svg2" sourceHandle: bottom targetHandle: top type : default />
+<Edge source: "svg1" target: "svg2" sourceHandle: bottom targetHandle: top type : default  />
 <Edge source: "svg2" target: "svg3" sourceHandle: bottom targetHandle: top type : default />
 <Edge source: "svg3" target: "svg4" sourceHandle: bottom targetHandle: top type : default />
 <Edge source: "svg4" target: "svg5" sourceHandle: bottom targetHandle: top type : default />
+    
+<Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-1">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>\` 
+position: { x: 449 y: 290 }
+/>
 
+<Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-1">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>\` 
+position: { x: 725 y: 290 }
+/>
 
+<Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-1">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>\` 
+position: { x: 994 y: 289 }
+/>
+
+<Svg code: \`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-10 rounded-full bg-accent-content stroke-(--color-accent) p-1">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>\` 
+position: { x: 451 y: 769 }
+/>
+
+<Text text: "Output" position: { x: 213 y: 542 } dimension: { width: 51 height: 18 } fontFamily: "Roboto Mono" classes: "text-wrap mx-auto break-words truncate text-primary-content text-1xl" />
+<Text text: "Input" position: { x: 205 y: 299 } dimension: { width: 51 height: 18 } fontFamily: "Roboto Mono" classes: "text-wrap mx-auto break-words truncate text-primary-content text-1xl" />
+<Text text: "Tokenization" position: { x: 209 y: 361 } dimension: { width: 94 height: 18 } fontFamily: "Roboto Mono" classes: "text-wrap mx-auto break-words truncate text-primary-content text-1xl" />
+<Text text: "Embedding" position: { x: 213 y: 420 } dimension: { width: 67 height: 17 } fontFamily: "Roboto Mono" classes: "text-wrap mx-auto break-words truncate text-primary-content text-1xl" />
+<Text text: "Transformer" position: { x: 212 y: 480 } dimension: { width: 67 height: 17 } fontFamily: "Roboto Mono" classes: "text-wrap mx-auto break-words truncate text-primary-content text-1xl" />
+ 
 
 `
-    }
+  }
 ];

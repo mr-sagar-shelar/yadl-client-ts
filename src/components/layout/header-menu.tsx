@@ -5,17 +5,33 @@ import {
     MenubarMenu,
     MenubarRadioGroup,
     MenubarRadioItem,
+    MenubarShortcut,
     MenubarTrigger,
 } from "@/components/ui/menubar"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useAtom } from 'jotai'
 import { codeVisible, searchShapesVisible, previewTheme } from '@/atoms/application-config-atoms'
 import { ThemeNames } from "@/components/constants/ThemeNames";
+import { useEffect } from "react";
 
 export function HeaderMenu() {
     const [isCodeVisible, setCodeVisible] = useAtom(codeVisible);
     const [isSearchShapesVisible, setSearchShapesVisible] = useAtom(searchShapesVisible);
     const [currentPreviewTheme, setPreviewTheme] = useAtom(previewTheme);
+
+    useEffect(() => {
+        const down = (e: KeyboardEvent) => {
+            if (e.key === "e" && (e.metaKey || e.ctrlKey)) {
+                e.preventDefault()
+                setCodeVisible((open) => !open)
+            } else if (e.key === "s" && (e.metaKey || e.ctrlKey)) {
+                e.preventDefault()
+                setSearchShapesVisible((open) => !open)
+            }
+        }
+        document.addEventListener("keydown", down)
+        return () => document.removeEventListener("keydown", down)
+    }, [])
 
     const renderThemeNames = () => {
         return ThemeNames.map(theme =>
@@ -63,13 +79,13 @@ export function HeaderMenu() {
                         checked={isCodeVisible}
                         onClick={() => setCodeVisible(!isCodeVisible)}
                     >
-                        Code
+                        Editor <MenubarShortcut>⌘E</MenubarShortcut>
                     </MenubarCheckboxItem>
                     <MenubarCheckboxItem
                         checked={isSearchShapesVisible}
                         onClick={() => setSearchShapesVisible(!isSearchShapesVisible)}
                     >
-                        Shapes
+                        Shapes <MenubarShortcut>⌘S</MenubarShortcut>
                     </MenubarCheckboxItem>
                     {/* <MenubarSeparator />
                     <MenubarItem inset>Toggle Fullscreen</MenubarItem> */}
