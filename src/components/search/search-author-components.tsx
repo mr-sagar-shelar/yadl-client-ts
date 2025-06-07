@@ -6,12 +6,14 @@ import type { DragDropProps } from "yadl-preview";
 import { useDnD } from "yadl-preview";
 import "react-fontpicker-ts/dist/index.css";
 import { useAtom } from 'jotai'
-import { authorName, authorCaption, authorImageSrc } from '@/atoms/author-tag-atoms'
+import { authorName, authorCaption, authorImageSrc, authorNameFontFamilyAtom, authorCaptionFontFamilyAtom } from '@/atoms/author-tag-atoms'
 
 const SearchTextComponents = () => {
     const [currentAuthorNameText] = useAtom(authorName);
     const [currentAuthorCaptionText] = useAtom(authorCaption);
     const [currentAuthorImageSource] = useAtom(authorImageSrc);
+    const [currentAuthorNameFontFamily] = useAtom(authorNameFontFamilyAtom);
+    const [currentAuthorCaptionFontFamily] = useAtom(authorCaptionFontFamilyAtom);
 
 
     const [_, setType] = useDnD();
@@ -38,6 +40,8 @@ const SearchTextComponents = () => {
                                     name: currentAuthorNameText,
                                     caption: currentAuthorCaptionText,
                                     src: currentAuthorImageSource,
+                                    nameFontFamily: currentAuthorNameFontFamily,
+                                    captionFontFamily: currentAuthorCaptionFontFamily,
                                     height: 100,
                                     width: 300
                                 },
@@ -51,12 +55,14 @@ const SearchTextComponents = () => {
                             name={currentAuthorNameText}
                             caption={currentAuthorCaptionText}
                             src={currentAuthorImageSource}
+                            nameFontFamily={currentAuthorNameFontFamily}
+                            captionFontFamily={currentAuthorCaptionFontFamily}
                         />
                     </div>
                 );
             });
         return listItems;
-    }, [currentAuthorNameText, currentAuthorCaptionText, currentAuthorImageSource]);
+    }, [currentAuthorNameText, currentAuthorCaptionText, currentAuthorImageSource, currentAuthorNameFontFamily, currentAuthorCaptionFontFamily]);
 
     return (
         <>

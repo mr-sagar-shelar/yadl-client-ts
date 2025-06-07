@@ -8,9 +8,10 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog"
 import { useAtom } from 'jotai'
-import { authorName, authorCaption, authorImageSrc } from '@/atoms/author-tag-atoms'
+import { authorName, authorCaption, authorImageSrc, authorNameFontFamilyAtom, authorCaptionFontFamilyAtom } from '@/atoms/author-tag-atoms'
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import FontPicker from "react-fontpicker-ts";
 
 interface ConfigureTextProps {
     isOpen: boolean;
@@ -21,6 +22,8 @@ export function ConfigureAuthorDialog(props: ConfigureTextProps) {
     const [currentAuthorNameText, setAuthorNameText] = useAtom(authorName);
     const [currentAuthorCaptionText, setAuthorCaptionText] = useAtom(authorCaption);
     const [currentAuthorImageSource, setAuthorImageSource] = useAtom(authorImageSrc);
+    const [authorNameFontFamily, setAuthorNameFontFamily] = useAtom(authorNameFontFamilyAtom);
+    const [authorCaptionFontFamily, setAuthorCaptionFontFamily] = useAtom(authorCaptionFontFamilyAtom);
 
 
     return (
@@ -52,6 +55,15 @@ export function ConfigureAuthorDialog(props: ConfigureTextProps) {
                         />
                     </div>
                     <div className="grid gap-3">
+                        <Label htmlFor="user-text-font-family">Name Font Family</Label>
+                        <FontPicker
+                            id="user-text-font-family"
+                            defaultValue={authorNameFontFamily}
+                            autoLoad
+                            value={(fontFamily: string) => setAuthorNameFontFamily(fontFamily)}
+                        />
+                    </div>
+                    <div className="grid gap-3">
                         <Label htmlFor="author-caption">Caption</Label>
                         <Input
                             id="author-caption"
@@ -59,6 +71,15 @@ export function ConfigureAuthorDialog(props: ConfigureTextProps) {
                             onChange={(event) => {
                                 setAuthorCaptionText(event.target.value);
                             }}
+                        />
+                    </div>
+                    <div className="grid gap-3">
+                        <Label htmlFor="user-text-font-family">Caption Font Family</Label>
+                        <FontPicker
+                            id="user-text-font-family"
+                            defaultValue={authorCaptionFontFamily}
+                            autoLoad
+                            value={(fontFamily: string) => setAuthorCaptionFontFamily(fontFamily)}
                         />
                     </div>
                     <div className="grid gap-3">
