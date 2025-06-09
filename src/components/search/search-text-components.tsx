@@ -67,7 +67,7 @@ const SearchTextComponents = () => {
             <div>
                 <div
                     style={{ fontFamily: currentFontFamily }}
-                    className={`grid grid-cols-1 overflow-auto w-full h-full`}
+                    className={`grid grid-cols-1 overflow-auto overflow-x-clip w-full h-full`}
                 >
                     {TextComponent}
                 </div>
