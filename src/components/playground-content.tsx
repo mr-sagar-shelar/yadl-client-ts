@@ -28,16 +28,17 @@ export default function PlaygroundContent() {
 
 
     useEffect(() => {
-        // let code = "";
-        // const editorCodeElement = document.getElementById("editor-code");
-        // if (editorCodeElement) {
-        //     code = editorCodeElement.dataset.code || "";
-        // }
-        // code = Examples[0].code;
-        let code = localStorage.getItem("app-current-code") || "";
-        if (code != "") {
+        let code = "";
+        const editorCodeElement = document.getElementById("editor-code");
+        if (editorCodeElement) {
+            code = editorCodeElement.dataset.code || "";
             setCurrentCode(code);
         }
+        // code = Examples[0].code;
+        // let code = localStorage.getItem("app-current-code") || "";
+        // if (code != "") {
+        //     setCurrentCode(code);
+        // }
     }, []);
 
     useMemo(() => {
