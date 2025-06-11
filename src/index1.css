@@ -200,6 +200,6 @@
 
 @source inline('{bg,text,from,via,to,fill,stroke}-{base}-{200}');
 
-@source inline('{bg,text,from,via,to,fill,stroke}-{base-100,base-200,base-300,base-content,primary,primary-content,secondary,secondary-content,accent,accent-content,neutral,neutral-content,info,info-content,success,success-content,warning,warning-content,error,error-content}/{0,{10..90..10},100}');
+@source inline('{bg,text,from,via,to,fill,stroke,border}-{base-100,base-200,base-300,base-content,primary,primary-content,secondary,secondary-content,accent,accent-content,neutral,neutral-content,info,info-content,success,success-content,warning,warning-content,error,error-content}/{0,{10..90..10},100}');
 
-@source inline('{bg,text,from,via,to,fill,stroke}-{base-100,base-200,base-300,base-content,primary,primary-content,secondary,secondary-content,accent,accent-content,neutral,neutral-content,info,info-content,success,success-content,warning,warning-content,error,error-content}');
+@source inline('{bg,text,border,from,via,to,ring,fill,stroke,shadow,outline}-{base-100,base-200,base-300,base-content,primary,primary-content,secondary,secondary-content,accent,accent-content,neutral,neutral-content,info,info-content,success,success-content,warning,warning-content,error,error-content}');

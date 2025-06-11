@@ -9653,6 +9653,10 @@ ${r}`),this.inline?`{${o}}`:o}};function D0(t,e,r){var n,o;if(t==="linkplain"||t
           {
             "$type": "Keyword",
             "value": "Box2"
+          },
+          {
+            "$type": "Keyword",
+            "value": "Box3"
           }
         ]
       },
