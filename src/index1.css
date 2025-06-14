@@ -189,7 +189,7 @@
 
 @source inline('{sm:,md:,lg:,xl:,}grid-cols-{1,2,3,4,5,6,7,8,9,10,11,12}');
 
-@source inline("{m,p}{x,y,t,b,l,r}-{1..10}");
+@source inline("{m,p}{x,y,t,b,l,r}-{1..15}");
 
 @source inline("{font}-{thin,extralight,light,normal,medium,semibold,bold,extrabold,black}");
 
@@ -203,3 +203,6 @@
 @source inline('{bg,text,from,via,to,fill,stroke,border}-{base-100,base-200,base-300,base-content,primary,primary-content,secondary,secondary-content,accent,accent-content,neutral,neutral-content,info,info-content,success,success-content,warning,warning-content,error,error-content}/{0,{10..90..10},100}');
 
 @source inline('{bg,text,border,from,via,to,ring,fill,stroke,shadow,outline}-{base-100,base-200,base-300,base-content,primary,primary-content,secondary,secondary-content,accent,accent-content,neutral,neutral-content,info,info-content,success,success-content,warning,warning-content,error,error-content}');
+
+
+@source inline("{-,}{top,right,bottom,left,inset,start,end}-{1..15}");

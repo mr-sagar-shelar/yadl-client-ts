@@ -464,6 +464,38 @@ position: { x: 73 y: 42 } dimension: { width: 62 height: 56 }
 
 }   />
 
+
+<Box type: Box3 position: { x: 751 y: 76 } dimension: { width: 289 height: 304 } props: { "title": "Transformer", "number" : 2, "captions": [ "Innovative neural networks", "Processes sequential data for enhanced language tasks" ], "color": "primary" }   />
+<Box type: Box3 position: { x: 1083 y: 81 } dimension: { width: 289 height: 304 } props: { "title": "Prompt Engineering", "number" : 3, "captions": [ "Designing precise inputs to achieve desired AI outputs", "Combines instructions, context, and constraints effectively" ], "color": "success" }   />
+<Box type: Box3 position: { x: 1422 y: 75 } dimension: { width: 289 height: 304 } props: { "title": "Fine Tuning", "number" : 4, "captions": [ "Customizing pre-trained models for specific tasks", "Utilizes focused datasets for tareted improvements" ], "color": "info" }   />
+<Box type: Box3 position: { x: 415 y: 449 } dimension: { width: 289 height: 304 } props: { "title": "Embedding", "number" : 5, "captions": [ "Encodes text or data into numberical formats", "Enables semantic search and efficient AI analysis" ], "color": "secondary" }   />
+<Box type: Box3 position: { x: 758 y: 440 } dimension: { width: 289 height: 304 } props: { "title": "RAG", "number" : 6, "captions": [ "Merges retrieval and generation for accurate results", "Accesses external sources during text creation" ], "color": "primary" }   />
+<Box type: Box3 position: { x: 1097 y: 435 } dimension: { width: 289 height: 304 } props: { "title": "Tokens", "number" : 7, "captions": [ "Small unitls like words or characters in AI models", "Defines capacity and processing efficiency" ], "color": "success" }   />
+<Box type: Box3 position: { x: 1431 y: 430 } dimension: { width: 289 height: 304 } props: { "title": "Hallucinations", "number" : 8, "captions": [ "Occurs when AI generates plausible but incorrect information", "A major issue for ensuring reliable outputs" ], "color": "info" }   />
+<Box type: Box3 position: { x: 423 y: 805 } dimension: { width: 289 height: 304 } props: { "title": "Zero Shot", "number" : 9, "captions": [ "AI performs tasks without prior examples", "Relies on general understanding for new instructions" ], "color": "secondary" }   />
+<Box type: Box3 position: { x: 759 y: 803 } dimension: { width: 289 height: 304 } props: { "title": "Chain Of Thoughts", "number" : 10, "captions": [ "Guides AI to solve problems in logical steps", "Improves accuracy and explainability" ], "color": "primary" }   />
+<Box type: Box3 position: { x: 1096 y: 800 } dimension: { width: 289 height: 304 } props: { "title": "Context Window", "number" : 11, "captions": [ "Maximum input size and AI can handle in one session", "Affects coherence and memory of prior interactions" ], "color": "success" }   />
+<Box type: Box3 position: { x: 1436 y: 792 } dimension: { width: 289 height: 304 } props: { "title": "Temperature", "number" : 12, "captions": [ "Controls randomness in AI outpus", "Balances creativity and deterministic responses" ], "color": "info" }   />
+
+
+
+
+
+<Text text: "Gen AI Terms" position: { x: 401 y: -82 } dimension: { width: 707 height: 126 } fontFamily: "Alfa Slab One" classes: "text-wrap mx-auto break-words truncate text-primary bg-linear-to-t text-8xl" />
+<Author src: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80" 
+            position: { x: 1481 y: -93 } 
+            dimension: { width: 226 height: 102 }
+            name: "Sagar Shelar" 
+            caption: "@mr-sagar-shelar" 
+            imageClasses: "inline-block shrink-0 rounded-full" 
+            captionClasses: "text-base-content/50 text-sm" 
+            nameClasses: "text-base-content font-semibold" 
+            nameFontFamily: "Allerta" 
+            captionFontFamily: "text-base-content font-semibold" 
+            classes: "shrink-0 group block flex items-center gap-4 bg-base-300 rounded-2xl p-2" 
+            />
+
+
 `
 	}
 
