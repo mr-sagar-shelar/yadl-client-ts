@@ -3,21 +3,21 @@ import {
     MenubarCheckboxItem,
     MenubarContent,
     MenubarMenu,
-    MenubarRadioGroup,
-    MenubarRadioItem,
+    // MenubarRadioGroup,
+    // MenubarRadioItem,
     MenubarShortcut,
     MenubarTrigger,
 } from "@/components/ui/menubar"
-import { ScrollArea } from "@/components/ui/scroll-area"
+// import { ScrollArea } from "@/components/ui/scroll-area"
 import { useAtom } from 'jotai'
-import { codeVisible, searchShapesVisible, previewTheme } from '@/atoms/application-config-atoms'
-import { ThemeNames } from "@/components/constants/ThemeNames";
+import { codeVisible, searchShapesVisible } from '@/atoms/application-config-atoms'
+// import { ThemeNames } from "@/components/constants/ThemeNames";
 import { useEffect } from "react";
 
 export function HeaderMenu() {
     const [isCodeVisible, setCodeVisible] = useAtom(codeVisible);
     const [isSearchShapesVisible, setSearchShapesVisible] = useAtom(searchShapesVisible);
-    const [currentPreviewTheme, setPreviewTheme] = useAtom(previewTheme);
+    // const [currentPreviewTheme, setPreviewTheme] = useAtom(previewTheme);
 
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
@@ -33,19 +33,19 @@ export function HeaderMenu() {
         return () => document.removeEventListener("keydown", down)
     }, [])
 
-    const renderThemeNames = () => {
-        return ThemeNames.map(theme =>
-            <MenubarRadioItem
-                key={theme.value}
-                value={theme.title}
-                onClick={() => {
-                    setPreviewTheme(theme)
-                }}
-            >
-                {theme.title}
-            </MenubarRadioItem>
-        )
-    }
+    // const renderThemeNames = () => {
+    //     return ThemeNames.map(theme =>
+    //         <MenubarRadioItem
+    //             key={theme.value}
+    //             value={theme.title}
+    //             onClick={() => {
+    //                 setPreviewTheme(theme)
+    //             }}
+    //         >
+    //             {theme.title}
+    //         </MenubarRadioItem>
+    //     )
+    // }
 
     return (
         <Menubar className="border-0 shadow-none">
@@ -91,7 +91,7 @@ export function HeaderMenu() {
                     <MenubarItem inset>Toggle Fullscreen</MenubarItem> */}
                 </MenubarContent>
             </MenubarMenu>
-            <MenubarMenu>
+            {/* <MenubarMenu>
                 <MenubarTrigger>Preview Theme</MenubarTrigger>
                 <MenubarContent>
                     <ScrollArea className="h-72 w-48">
@@ -101,10 +101,8 @@ export function HeaderMenu() {
                             {renderThemeNames()}
                         </MenubarRadioGroup>
                     </ScrollArea>
-                    {/* <MenubarSeparator />
-                    <MenubarItem disabled inset>Make your theme.</MenubarItem> */}
                 </MenubarContent>
-            </MenubarMenu>
+            </MenubarMenu> */}
         </Menubar>
     )
 }
